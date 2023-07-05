@@ -110,6 +110,7 @@
 		1B383F752A55087E003665EA /* widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetExtension.entitlements; sourceTree = "<group>"; };
 		1B383F762A5526C5003665EA /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		1B383F792A55329F003665EA /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		1B383F7C2A556131003665EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +175,7 @@
 		1B2886252A18F77400B1244B /* GaweeBaweeBoh */ = {
 			isa = PBXGroup;
 			children = (
+				1B383F7C2A556131003665EA /* Info.plist */,
 				1B383F742A550867003665EA /* GaweeBaweeBoh.entitlements */,
 				1B383F732A5501DC003665EA /* Extensions */,
 				1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */,
@@ -621,7 +623,7 @@
 				DEVELOPMENT_TEAM = QU9EPTU238;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "가위바위보";
+				INFOPLIST_FILE = GaweeBaweeBoh/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -654,7 +656,7 @@
 				DEVELOPMENT_TEAM = QU9EPTU238;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "가위바위보";
+				INFOPLIST_FILE = GaweeBaweeBoh/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
