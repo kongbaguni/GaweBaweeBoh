@@ -47,13 +47,10 @@ class HandUnit : Unit {
         super.draw(context: context)
         switch status {
         case .가위:
-            color = .red
             context.draw(Image("gawee"), in: newRect)
         case .바위:
-            color = .blue
             context.draw(Image("bawee"), in: newRect)
         case .보:
-            color = .orange
             context.draw(Image("boh"), in: newRect)
         }
     }
