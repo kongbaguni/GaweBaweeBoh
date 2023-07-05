@@ -29,17 +29,22 @@ struct AppGroup {
         var dic:[String:Any] = [
             "totalCount" : GameManager.shared.units.count,
         ]
+        
+        
         var data:[String:Int] = [:]
-        for item in GameManager.shared.data {
-            let color = item.0.stringValue
-            data[color] = item.1
-            if(item.1 == 0) {
-                data[color] = nil
+        for item in GameManager.shared.units {
+            if let status = (item as? HandUnit)?.status.rawValue {
+                let key = "\(status)"
+                if (data[key] == nil) {
+                    data[key] = 0
+                }
+                else {
+                    data[key]! += 1
+                }
             }
         }
-        dic["data"] = data
         
-                
+        dic["data"] = data
         save(dic: dic, url: makedFileURL(fileName: "game")!)
     }
     
@@ -54,15 +59,14 @@ struct AppGroup {
         return nil
     }
     
-    func loadGameData()->(data:[(Color,Int)],total:Int)? {
+    func loadGameData()->(data:[(HandUnit.Status,Int)],total:Int)? {
         if let data = load(fileUrl: makedFileURL(fileName: "game")!),
            let d = data["data"] as? [String:Int],
            let t = data["totalCount"] as? Int {
-            var rd:[(Color,Int)] = []
+            var rd:[(HandUnit.Status,Int)] = []
             for item in d {
-                if let color = Color.fromString(item.key) {
-                    rd.append((color, item.value))
-                }
+                let rawvalue = NSString(string:item.key).integerValue
+                rd.append((HandUnit.Status(rawValue: rawvalue)!, item.value))
             }
             rd.sort { a, b in
                 return a.1 > b.1

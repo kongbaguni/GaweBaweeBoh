@@ -13,6 +13,21 @@ class HandUnit : Unit {
         case 가위 = 0
         case 바위 = 1
         case 보 = 2
+        var stringValue:String {
+            switch self {
+            case .가위: return "가위"
+            case .바위: return "바위"
+            case .보: return "보"
+            }
+        }
+        var colorValue:Color {
+            switch self {
+            case .가위: return .red
+            case .바위: return .blue
+            case .보: return .orange
+            }
+
+        }
     }
     
     var status:Status = .init(rawValue: .random(in: 0...2))!
@@ -28,6 +43,7 @@ class HandUnit : Unit {
         let x = (rect.width - w) * 0.5 + rect.origin.x
         let y = (rect.height - w) * 0.5 + rect.origin.y
         let newRect = CGRect(x: x, y: y, width: w, height: h)
+        self.color = status.colorValue
         super.draw(context: context)
         switch status {
         case .가위:

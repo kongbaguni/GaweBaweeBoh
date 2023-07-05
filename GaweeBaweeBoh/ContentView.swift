@@ -22,20 +22,22 @@ struct ContentView: View {
             WidgetCenter.shared.reloadAllTimelines()
         }
     }
-    @State var data:[(Color,Int)] = []
+    @State var data:[(HandUnit.Status,Int)] = []
     @State var total = 0
     var body: some View {
         VStack {
             Canvas{context,size in
                 GameManager.shared.size = size
                 context.draw(Text("unit : \(GameManager.shared.units.count) count : \(count)"), in: .init(x: 10, y: -top, width: 200, height: 50))
-                var d:[Color:Int] = [:]
+                var d:[HandUnit.Status:Int] = [:]
                 for unit in GameManager.shared.units {
                     unit.draw(context: context)
-                    if(d[unit.color] == nil) {
-                        d[unit.color] = 0
-                    } else {
-                        d[unit.color]! += 1
+                    if let status = (unit as? HandUnit)?.status {
+                        if(d[status] == nil) {
+                            d[status] = 0
+                        } else {
+                            d[status]! += 1
+                        }
                     }
                 }
                 DispatchQueue.main.async {

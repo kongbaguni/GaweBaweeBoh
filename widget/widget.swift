@@ -11,17 +11,16 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     let appGroup = AppGroup()
-    var data:(data:[(Color,Int)],total:Int) {
-        return appGroup.loadGameData() ?? (data:[],total:0)
+    var data:(data:[(HandUnit.Status,Int)],total:Int) {
+        return appGroup.loadGameData() ?? (data:[(.가위,0),(.바위,0),(.보,0)],total:0)
     }
     
     func placeholder(in context: Context) -> SimpleEntry {
-        
         SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: data.data,
-            total: data.total
+            data: [(.가위,0),(.바위,0),(.보,0)],
+            total: 0
         )
     }
 
@@ -29,8 +28,8 @@ struct Provider: IntentTimelineProvider {
         let entry = SimpleEntry(
             date: Date(),
             configuration: configuration,
-            data: data.data,
-            total: data.total
+            data: [(.가위,0),(.바위,0),(.보,0)],
+            total: 0
         )
         completion(entry)
     }
@@ -59,7 +58,7 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
-    let data:[(Color,Int)]
+    let data:[(HandUnit.Status,Int)]
     let total:Int
 }
 
@@ -70,23 +69,26 @@ struct widgetEntryView : View {
         GeometryReader { proxy in
             VStack {
                 ForEach(0..<entry.data.count, id:\.self) { idx in
-                    HStack {
+                    HStack {                        
                         Text(entry.data[idx].0.stringValue)
-                            .foregroundColor(entry.data[idx].0)
+                            .foregroundColor(entry.data[idx].0.colorValue)
                         Text("\(entry.data[idx].1)")
+                        Spacer()
                     }
                 }
                 HStack {
-                    ForEach(0..<entry.data.count, id:\.self) { idx in
-                        let p = Double(entry.data[idx].1) / Double(entry.total)
-                        Rectangle()
-                            .foregroundColor(entry.data[idx].0)
-                            .frame(width: (proxy.size.width - 40) * p)
-                            .border(.primary,width: 2)
+                    if(entry.total > 0) {
+                        ForEach(0..<entry.data.count, id:\.self) { idx in
+                            let p = Double(entry.data[idx].1) / Double(entry.total)
+                            Rectangle()
+                                .foregroundColor(entry.data[idx].0.colorValue)
+                                .frame(width: (proxy.size.width - 20) * p)
+                        }                        
                     }
-                }.padding(10)
+                    Spacer()
+                }
             }
-        }
+        }.padding(20)
         
     }
 }
@@ -108,7 +110,7 @@ struct widget_Previews: PreviewProvider {
         widgetEntryView(entry: SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: [(.red,10),(.blue,20),(.green,30)],
+            data: [(.가위,10),(.바위,20),(.보,30)],
             total: 60
         )
         
