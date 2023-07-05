@@ -6,16 +6,94 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
+    @State var csize:CGFloat = 100
+    @State var width:CGFloat = 4.0
+    @State var count = 0
+    var top:CGFloat {
+        (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.top ?? 0
+    }
+    init() {
+        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { noti in
+            AppGroup().saveGameData()
+            
+            WidgetCenter.shared.reloadAllTimelines()
+        }
+    }
+    @State var data:[(Color,Int)] = []
+    @State var total = 0
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Canvas{context,size in
+                GameManager.shared.size = size
+                context.draw(Text("unit : \(GameManager.shared.units.count) count : \(count)"), in: .init(x: 10, y: -top, width: 200, height: 50))
+                var d:[Color:Int] = [:]
+                for unit in GameManager.shared.units {
+                    unit.draw(context: context)
+                    if(d[unit.color] == nil) {
+                        d[unit.color] = 0
+                    } else {
+                        d[unit.color]! += 1
+                    }
+                }
+                DispatchQueue.main.async {
+                    total = GameManager.shared.units.count
+                    data = []
+                    for i in d {
+                        data.append(i)
+                    }
+                    data.sort { a, b in
+                        return a.1 > b.1
+                    }
+
+                }
+                
+                if(count % 10 == 0) {
+                    GameManager.shared.units.append(HandUnit(status: HandUnit.Status(rawValue: (count / 10) % 3)!))
+                }
+            }
+            GraphView(data: data, total: total)
+            .frame(height: 50)
+            .padding(.bottom,.safeAreaInsetBottom)
+
+                        
+//            HStack {
+//                Button {
+//                    GameManager.shared.units.append(HandUnit(status: .가위))
+//                } label: {
+//                    Text("가위")
+//                }
+//                Button {
+//                    GameManager.shared.units.append(HandUnit(status: .바위))
+//                } label: {
+//                    Text("바위")
+//                }
+//                Button {
+//                    GameManager.shared.units.append(HandUnit(status: .보))
+//                } label: {
+//                    Text("보")
+//                }
+//
+//            }
+//            .padding(.bottom,
+//                     (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.bottom ?? 0)
+
         }
-        .padding()
+        .ignoresSafeArea(.all)
+        .onAppear {
+            startUpdate()
+        }
+    }
+    
+    func startUpdate() {
+        let timer = Timer.scheduledTimer(withTimeInterval: 1.0 / 60.0, repeats: true) { timer in
+            count += 1
+            GameManager.shared.process()
+        }
+        timer.tolerance = 0.1
+        RunLoop.current.add(timer, forMode: .common)
     }
 }
 
