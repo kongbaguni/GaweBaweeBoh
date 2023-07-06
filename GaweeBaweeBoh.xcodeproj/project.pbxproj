@@ -7,14 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B0551372A56996B002904B5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F4A2A54F039003665EA /* GraphView.swift */; };
+		1B05513D2A56A6FB002904B5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B383F542A55007B003665EA /* WidgetKit.framework */; };
+		1B05513E2A56A6FB002904B5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B383F562A55007B003665EA /* SwiftUI.framework */; };
+		1B0551412A56A6FB002904B5 /* widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0551402A56A6FB002904B5 /* widgetBundle.swift */; };
+		1B0551432A56A6FB002904B5 /* widgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0551422A56A6FB002904B5 /* widgetLiveActivity.swift */; };
+		1B0551452A56A6FB002904B5 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0551442A56A6FB002904B5 /* widget.swift */; };
+		1B0551482A56A6FC002904B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0551472A56A6FC002904B5 /* Assets.xcassets */; };
+		1B05514A2A56A6FC002904B5 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1B0551462A56A6FB002904B5 /* widget.intentdefinition */; };
+		1B05514B2A56A6FC002904B5 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1B0551462A56A6FB002904B5 /* widget.intentdefinition */; };
+		1B05514E2A56A6FC002904B5 /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1B05513C2A56A6FB002904B5 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1B0551522A56A710002904B5 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886592A19DC2900B1244B /* CGPoint+Extensions.swift */; };
+		1B0551532A56A710002904B5 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F792A55329F003665EA /* Color+Extensions.swift */; };
+		1B0551542A56A710002904B5 /* CGSIze+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886572A19D73600B1244B /* CGSIze+Extensions.swift */; };
+		1B0551552A56A717002904B5 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886542A19D60C00B1244B /* GameManager.swift */; };
+		1B0551562A56A717002904B5 /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F762A5526C5003665EA /* AppGroup.swift */; };
+		1B0551572A56A717002904B5 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886502A18FAF400B1244B /* Unit.swift */; };
+		1B0551582A56A717002904B5 /* HandUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B28865B2A19DFB200B1244B /* HandUnit.swift */; };
+		1B0551592A56A71D002904B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
+		1B05515A2A56A734002904B5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F4A2A54F039003665EA /* GraphView.swift */; };
 		1B2886272A18F77400B1244B /* GaweeBaweeBohApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */; };
 		1B2886292A18F77400B1244B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886282A18F77400B1244B /* ContentView.swift */; };
 		1B28862B2A18F77500B1244B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B28862A2A18F77500B1244B /* Assets.xcassets */; };
 		1B28862E2A18F77500B1244B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B28862D2A18F77500B1244B /* Preview Assets.xcassets */; };
-		1B2886382A18F77500B1244B /* GaweeBaweeBohTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886372A18F77500B1244B /* GaweeBaweeBohTests.swift */; };
-		1B2886422A18F77500B1244B /* GaweeBaweeBohUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886412A18F77500B1244B /* GaweeBaweeBohUITests.swift */; };
-		1B2886442A18F77500B1244B /* GaweeBaweeBohUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886432A18F77500B1244B /* GaweeBaweeBohUITestsLaunchTests.swift */; };
 		1B2886512A18FAF400B1244B /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886502A18FAF400B1244B /* Unit.swift */; };
 		1B2886552A19D60C00B1244B /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886542A19D60C00B1244B /* GameManager.swift */; };
 		1B2886582A19D73600B1244B /* CGSIze+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886572A19D73600B1244B /* CGSIze+Extensions.swift */; };
@@ -22,47 +36,17 @@
 		1B28865C2A19DFB200B1244B /* HandUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B28865B2A19DFB200B1244B /* HandUnit.swift */; };
 		1B383F4B2A54F039003665EA /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F4A2A54F039003665EA /* GraphView.swift */; };
 		1B383F4D2A54F9C9003665EA /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F4C2A54F9C9003665EA /* CGFloat+Extensions.swift */; };
-		1B383F552A55007B003665EA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B383F542A55007B003665EA /* WidgetKit.framework */; };
-		1B383F572A55007B003665EA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B383F562A55007B003665EA /* SwiftUI.framework */; };
-		1B383F5A2A55007B003665EA /* widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F592A55007B003665EA /* widgetBundle.swift */; };
-		1B383F5E2A55007B003665EA /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F5D2A55007B003665EA /* widget.swift */; };
-		1B383F632A55007C003665EA /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F5F2A55007B003665EA /* widget.intentdefinition */; };
-		1B383F642A55007C003665EA /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F5F2A55007B003665EA /* widget.intentdefinition */; };
-		1B383F672A55007C003665EA /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1B383F522A55007B003665EA /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1B383F6D2A5500B8003665EA /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886542A19D60C00B1244B /* GameManager.swift */; };
-		1B383F6E2A5500C8003665EA /* HandUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B28865B2A19DFB200B1244B /* HandUnit.swift */; };
-		1B383F6F2A5500C8003665EA /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886502A18FAF400B1244B /* Unit.swift */; };
-		1B383F702A5500E3003665EA /* CGSIze+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886572A19D73600B1244B /* CGSIze+Extensions.swift */; };
-		1B383F712A5500E3003665EA /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886592A19DC2900B1244B /* CGPoint+Extensions.swift */; };
 		1B383F772A5526C5003665EA /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F762A5526C5003665EA /* AppGroup.swift */; };
-		1B383F782A552D04003665EA /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F762A5526C5003665EA /* AppGroup.swift */; };
 		1B383F7A2A55329F003665EA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F792A55329F003665EA /* Color+Extensions.swift */; };
-		1B383F7B2A5532F7003665EA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F792A55329F003665EA /* Color+Extensions.swift */; };
 		1B5A782E2A5678F6005C3ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
-		1B5A782F2A5678F6005C3ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
-		1B5A78322A568250005C3ECC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B28862A2A18F77500B1244B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1B2886342A18F77500B1244B /* PBXContainerItemProxy */ = {
+		1B05514C2A56A6FC002904B5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1B28861B2A18F77400B1244B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1B2886222A18F77400B1244B;
-			remoteInfo = GaweeBaweeBoh;
-		};
-		1B28863E2A18F77500B1244B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B28861B2A18F77400B1244B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B2886222A18F77400B1244B;
-			remoteInfo = GaweeBaweeBoh;
-		};
-		1B383F652A55007C003665EA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1B28861B2A18F77400B1244B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1B383F512A55007B003665EA;
+			remoteGlobalIDString = 1B05513B2A56A6FB002904B5;
 			remoteInfo = widgetExtension;
 		};
 /* End PBXContainerItemProxy section */
@@ -74,7 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1B383F672A55007C003665EA /* widgetExtension.appex in Embed Foundation Extensions */,
+				1B05514E2A56A6FC002904B5 /* widgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,14 +66,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1B05513C2A56A6FB002904B5 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B0551402A56A6FB002904B5 /* widgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetBundle.swift; sourceTree = "<group>"; };
+		1B0551422A56A6FB002904B5 /* widgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetLiveActivity.swift; sourceTree = "<group>"; };
+		1B0551442A56A6FB002904B5 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
+		1B0551462A56A6FB002904B5 /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
+		1B0551472A56A6FC002904B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B0551492A56A6FC002904B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B2886232A18F77400B1244B /* GaweeBaweeBoh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaweeBaweeBoh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaweeBaweeBohApp.swift; sourceTree = "<group>"; };
 		1B2886282A18F77400B1244B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1B28862A2A18F77500B1244B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B28862D2A18F77500B1244B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1B2886332A18F77500B1244B /* GaweeBaweeBohTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaweeBaweeBohTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B2886372A18F77500B1244B /* GaweeBaweeBohTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaweeBaweeBohTests.swift; sourceTree = "<group>"; };
-		1B28863D2A18F77500B1244B /* GaweeBaweeBohUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaweeBaweeBohUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B2886412A18F77500B1244B /* GaweeBaweeBohUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaweeBaweeBohUITests.swift; sourceTree = "<group>"; };
 		1B2886432A18F77500B1244B /* GaweeBaweeBohUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaweeBaweeBohUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1B2886502A18FAF400B1244B /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
@@ -99,13 +88,8 @@
 		1B28865B2A19DFB200B1244B /* HandUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandUnit.swift; sourceTree = "<group>"; };
 		1B383F4A2A54F039003665EA /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		1B383F4C2A54F9C9003665EA /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
-		1B383F522A55007B003665EA /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B383F542A55007B003665EA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1B383F562A55007B003665EA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		1B383F592A55007B003665EA /* widgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetBundle.swift; sourceTree = "<group>"; };
-		1B383F5D2A55007B003665EA /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
-		1B383F5F2A55007B003665EA /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
-		1B383F622A55007C003665EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B383F742A550867003665EA /* GaweeBaweeBoh.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GaweeBaweeBoh.entitlements; sourceTree = "<group>"; };
 		1B383F752A55087E003665EA /* widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetExtension.entitlements; sourceTree = "<group>"; };
 		1B383F762A5526C5003665EA /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
@@ -115,6 +99,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1B0551392A56A6FB002904B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B05513E2A56A6FB002904B5 /* SwiftUI.framework in Frameworks */,
+				1B05513D2A56A6FB002904B5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1B2886202A18F77400B1244B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -122,32 +115,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B2886302A18F77500B1244B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B28863A2A18F77500B1244B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B383F4F2A55007B003665EA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B383F572A55007B003665EA /* SwiftUI.framework in Frameworks */,
-				1B383F552A55007B003665EA /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B05513F2A56A6FB002904B5 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				1B0551402A56A6FB002904B5 /* widgetBundle.swift */,
+				1B0551422A56A6FB002904B5 /* widgetLiveActivity.swift */,
+				1B0551442A56A6FB002904B5 /* widget.swift */,
+				1B0551462A56A6FB002904B5 /* widget.intentdefinition */,
+				1B0551472A56A6FC002904B5 /* Assets.xcassets */,
+				1B0551492A56A6FC002904B5 /* Info.plist */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 		1B28861A2A18F77400B1244B = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +139,7 @@
 				1B2886252A18F77400B1244B /* GaweeBaweeBoh */,
 				1B2886362A18F77500B1244B /* GaweeBaweeBohTests */,
 				1B2886402A18F77500B1244B /* GaweeBaweeBohUITests */,
-				1B383F582A55007B003665EA /* widget */,
+				1B05513F2A56A6FB002904B5 /* widget */,
 				1B383F532A55007B003665EA /* Frameworks */,
 				1B2886242A18F77400B1244B /* Products */,
 			);
@@ -166,9 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				1B2886232A18F77400B1244B /* GaweeBaweeBoh.app */,
-				1B2886332A18F77500B1244B /* GaweeBaweeBohTests.xctest */,
-				1B28863D2A18F77500B1244B /* GaweeBaweeBohUITests.xctest */,
-				1B383F522A55007B003665EA /* widgetExtension.appex */,
+				1B05513C2A56A6FB002904B5 /* widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,17 +212,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1B383F582A55007B003665EA /* widget */ = {
-			isa = PBXGroup;
-			children = (
-				1B383F592A55007B003665EA /* widgetBundle.swift */,
-				1B383F5D2A55007B003665EA /* widget.swift */,
-				1B383F5F2A55007B003665EA /* widget.intentdefinition */,
-				1B383F622A55007C003665EA /* Info.plist */,
-			);
-			path = widget;
-			sourceTree = "<group>";
-		};
 		1B383F6C2A55008C003665EA /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +237,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1B05513B2A56A6FB002904B5 /* widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B05514F2A56A6FC002904B5 /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildPhases = (
+				1B0551382A56A6FB002904B5 /* Sources */,
+				1B0551392A56A6FB002904B5 /* Frameworks */,
+				1B05513A2A56A6FB002904B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widgetExtension;
+			productName = widgetExtension;
+			productReference = 1B05513C2A56A6FB002904B5 /* widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1B2886222A18F77400B1244B /* GaweeBaweeBoh */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B2886472A18F77500B1244B /* Build configuration list for PBXNativeTarget "GaweeBaweeBoh" */;
@@ -279,65 +266,12 @@
 			buildRules = (
 			);
 			dependencies = (
-				1B383F662A55007C003665EA /* PBXTargetDependency */,
+				1B05514D2A56A6FC002904B5 /* PBXTargetDependency */,
 			);
 			name = GaweeBaweeBoh;
 			productName = GaweeBaweeBoh;
 			productReference = 1B2886232A18F77400B1244B /* GaweeBaweeBoh.app */;
 			productType = "com.apple.product-type.application";
-		};
-		1B2886322A18F77500B1244B /* GaweeBaweeBohTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B28864A2A18F77500B1244B /* Build configuration list for PBXNativeTarget "GaweeBaweeBohTests" */;
-			buildPhases = (
-				1B28862F2A18F77500B1244B /* Sources */,
-				1B2886302A18F77500B1244B /* Frameworks */,
-				1B2886312A18F77500B1244B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B2886352A18F77500B1244B /* PBXTargetDependency */,
-			);
-			name = GaweeBaweeBohTests;
-			productName = GaweeBaweeBohTests;
-			productReference = 1B2886332A18F77500B1244B /* GaweeBaweeBohTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1B28863C2A18F77500B1244B /* GaweeBaweeBohUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B28864D2A18F77500B1244B /* Build configuration list for PBXNativeTarget "GaweeBaweeBohUITests" */;
-			buildPhases = (
-				1B2886392A18F77500B1244B /* Sources */,
-				1B28863A2A18F77500B1244B /* Frameworks */,
-				1B28863B2A18F77500B1244B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1B28863F2A18F77500B1244B /* PBXTargetDependency */,
-			);
-			name = GaweeBaweeBohUITests;
-			productName = GaweeBaweeBohUITests;
-			productReference = 1B28863D2A18F77500B1244B /* GaweeBaweeBohUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		1B383F512A55007B003665EA /* widgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1B383F682A55007C003665EA /* Build configuration list for PBXNativeTarget "widgetExtension" */;
-			buildPhases = (
-				1B383F4E2A55007B003665EA /* Sources */,
-				1B383F4F2A55007B003665EA /* Frameworks */,
-				1B383F502A55007B003665EA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = widgetExtension;
-			productName = widgetExtension;
-			productReference = 1B383F522A55007B003665EA /* widgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -349,19 +283,11 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					1B05513B2A56A6FB002904B5 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
 					1B2886222A18F77400B1244B = {
 						CreatedOnToolsVersion = 14.3;
-					};
-					1B2886322A18F77500B1244B = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 1B2886222A18F77400B1244B;
-					};
-					1B28863C2A18F77500B1244B = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 1B2886222A18F77400B1244B;
-					};
-					1B383F512A55007B003665EA = {
-						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
@@ -379,14 +305,21 @@
 			projectRoot = "";
 			targets = (
 				1B2886222A18F77400B1244B /* GaweeBaweeBoh */,
-				1B2886322A18F77500B1244B /* GaweeBaweeBohTests */,
-				1B28863C2A18F77500B1244B /* GaweeBaweeBohUITests */,
-				1B383F512A55007B003665EA /* widgetExtension */,
+				1B05513B2A56A6FB002904B5 /* widgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1B05513A2A56A6FB002904B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B0551482A56A6FC002904B5 /* Assets.xcassets in Resources */,
+				1B0551592A56A71D002904B5 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1B2886212A18F77400B1244B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,36 +330,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B2886312A18F77500B1244B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B28863B2A18F77500B1244B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B383F502A55007B003665EA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B5A78322A568250005C3ECC /* Assets.xcassets in Resources */,
-				1B5A782F2A5678F6005C3ECC /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1B0551382A56A6FB002904B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B05514A2A56A6FC002904B5 /* widget.intentdefinition in Sources */,
+				1B0551552A56A717002904B5 /* GameManager.swift in Sources */,
+				1B0551582A56A717002904B5 /* HandUnit.swift in Sources */,
+				1B0551522A56A710002904B5 /* CGPoint+Extensions.swift in Sources */,
+				1B0551452A56A6FB002904B5 /* widget.swift in Sources */,
+				1B0551562A56A717002904B5 /* AppGroup.swift in Sources */,
+				1B0551572A56A717002904B5 /* Unit.swift in Sources */,
+				1B0551542A56A710002904B5 /* CGSIze+Extensions.swift in Sources */,
+				1B0551432A56A6FB002904B5 /* widgetLiveActivity.swift in Sources */,
+				1B0551412A56A6FB002904B5 /* widgetBundle.swift in Sources */,
+				1B0551532A56A710002904B5 /* Color+Extensions.swift in Sources */,
+				1B05515A2A56A734002904B5 /* GraphView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1B28861F2A18F77400B1244B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B05514B2A56A6FC002904B5 /* widget.intentdefinition in Sources */,
 				1B383F772A5526C5003665EA /* AppGroup.swift in Sources */,
 				1B2886512A18FAF400B1244B /* Unit.swift in Sources */,
 				1B383F4D2A54F9C9003665EA /* CGFloat+Extensions.swift in Sources */,
@@ -434,7 +364,6 @@
 				1B2886582A19D73600B1244B /* CGSIze+Extensions.swift in Sources */,
 				1B2886292A18F77400B1244B /* ContentView.swift in Sources */,
 				1B28865C2A19DFB200B1244B /* HandUnit.swift in Sources */,
-				1B383F642A55007C003665EA /* widget.intentdefinition in Sources */,
 				1B28865A2A19DC2900B1244B /* CGPoint+Extensions.swift in Sources */,
 				1B2886272A18F77400B1244B /* GaweeBaweeBohApp.swift in Sources */,
 				1B383F4B2A54F039003665EA /* GraphView.swift in Sources */,
@@ -442,58 +371,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1B28862F2A18F77500B1244B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B2886382A18F77500B1244B /* GaweeBaweeBohTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B2886392A18F77500B1244B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B2886422A18F77500B1244B /* GaweeBaweeBohUITests.swift in Sources */,
-				1B2886442A18F77500B1244B /* GaweeBaweeBohUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1B383F4E2A55007B003665EA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B383F632A55007C003665EA /* widget.intentdefinition in Sources */,
-				1B383F5E2A55007B003665EA /* widget.swift in Sources */,
-				1B383F702A5500E3003665EA /* CGSIze+Extensions.swift in Sources */,
-				1B383F712A5500E3003665EA /* CGPoint+Extensions.swift in Sources */,
-				1B383F782A552D04003665EA /* AppGroup.swift in Sources */,
-				1B383F6F2A5500C8003665EA /* Unit.swift in Sources */,
-				1B383F5A2A55007B003665EA /* widgetBundle.swift in Sources */,
-				1B383F6E2A5500C8003665EA /* HandUnit.swift in Sources */,
-				1B383F7B2A5532F7003665EA /* Color+Extensions.swift in Sources */,
-				1B383F6D2A5500B8003665EA /* GameManager.swift in Sources */,
-				1B0551372A56996B002904B5 /* GraphView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B2886352A18F77500B1244B /* PBXTargetDependency */ = {
+		1B05514D2A56A6FC002904B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B2886222A18F77400B1244B /* GaweeBaweeBoh */;
-			targetProxy = 1B2886342A18F77500B1244B /* PBXContainerItemProxy */;
-		};
-		1B28863F2A18F77500B1244B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1B2886222A18F77400B1244B /* GaweeBaweeBoh */;
-			targetProxy = 1B28863E2A18F77500B1244B /* PBXContainerItemProxy */;
-		};
-		1B383F662A55007C003665EA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1B383F512A55007B003665EA /* widgetExtension */;
-			targetProxy = 1B383F652A55007C003665EA /* PBXContainerItemProxy */;
+			target = 1B05513B2A56A6FB002904B5 /* widgetExtension */;
+			targetProxy = 1B05514C2A56A6FC002904B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -509,6 +393,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1B0551502A56A6FC002904B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QU9EPTU238;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBoh.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B0551512A56A6FC002904B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QU9EPTU238;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBoh.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		1B2886452A18F77500B1244B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -693,143 +635,18 @@
 			};
 			name = Release;
 		};
-		1B28864B2A18F77500B1244B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QU9EPTU238;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBohTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GaweeBaweeBoh.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GaweeBaweeBoh";
-			};
-			name = Debug;
-		};
-		1B28864C2A18F77500B1244B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QU9EPTU238;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBohTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GaweeBaweeBoh.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GaweeBaweeBoh";
-			};
-			name = Release;
-		};
-		1B28864E2A18F77500B1244B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QU9EPTU238;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBohUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GaweeBaweeBoh;
-			};
-			name = Debug;
-		};
-		1B28864F2A18F77500B1244B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QU9EPTU238;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBohUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GaweeBaweeBoh;
-			};
-			name = Release;
-		};
-		1B383F692A55007C003665EA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QU9EPTU238;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = widget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBoh.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1B383F6A2A55007C003665EA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = QU9EPTU238;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = widget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "$(PRODUCT_NAME)";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBoh.widget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1B05514F2A56A6FC002904B5 /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B0551502A56A6FC002904B5 /* Debug */,
+				1B0551512A56A6FC002904B5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1B28861E2A18F77400B1244B /* Build configuration list for PBXProject "GaweeBaweeBoh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -844,33 +661,6 @@
 			buildConfigurations = (
 				1B2886482A18F77500B1244B /* Debug */,
 				1B2886492A18F77500B1244B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1B28864A2A18F77500B1244B /* Build configuration list for PBXNativeTarget "GaweeBaweeBohTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B28864B2A18F77500B1244B /* Debug */,
-				1B28864C2A18F77500B1244B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1B28864D2A18F77500B1244B /* Build configuration list for PBXNativeTarget "GaweeBaweeBohUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B28864E2A18F77500B1244B /* Debug */,
-				1B28864F2A18F77500B1244B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1B383F682A55007C003665EA /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1B383F692A55007C003665EA /* Debug */,
-				1B383F6A2A55007C003665EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
