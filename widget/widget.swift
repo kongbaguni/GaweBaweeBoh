@@ -12,15 +12,15 @@ import Intents
 struct Provider: IntentTimelineProvider {
     
     var data:(data:[(HandUnit.Status,Int)],total:Int) {
-        return AppGroup().loadGameData() ?? (data:[(.가위,0),(.바위,0),(.보,0)],total:0)
+        return AppGroup().loadGameData() ?? (data:[(.가위,10),(.바위,10),(.보,10)],total:30)
     }
     
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: [(.가위,3),(.바위,6),(.보,9)],
-            total:18
+            data:data.data,
+            total:data.total
         )
     }
 
@@ -28,8 +28,8 @@ struct Provider: IntentTimelineProvider {
         let entry = SimpleEntry(
             date: Date(),
             configuration: configuration,
-            data: [(.가위,3),(.바위,6),(.보,9)],
-            total: 18
+            data: data.data,
+            total: data.total
         )
         completion(entry)
     }
@@ -74,7 +74,6 @@ struct widgetEntryView : View {
                         .scaledToFit()
                         .frame(width: proxy.size.width)
                         .border(.primary,width:1)
-                    
                 }
                 ForEach(0..<entry.data.count, id:\.self) { idx in
                     HStack {                        
@@ -118,8 +117,8 @@ struct widget_Previews: PreviewProvider {
         widgetEntryView(entry: SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: [],
-            total: 18
+            data: [(.가위,10),(.바위,10),(.보,10)],
+            total: 30
         )
         
         )
