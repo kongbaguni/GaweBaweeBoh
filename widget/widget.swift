@@ -68,6 +68,14 @@ struct widgetEntryView : View {
     var body: some View {
         GeometryReader { proxy in
             VStack {
+                if(entry.data.count == 0) {
+                    Image("gawee")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: proxy.size.width)
+                        .border(.primary,width:1)
+                    
+                }
                 ForEach(0..<entry.data.count, id:\.self) { idx in
                     HStack {                        
                         Text(entry.data[idx].0.stringValue)
@@ -110,7 +118,7 @@ struct widget_Previews: PreviewProvider {
         widgetEntryView(entry: SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: [(.가위,3),(.바위,6),(.보,9)],
+            data: [],
             total: 18
         )
         
