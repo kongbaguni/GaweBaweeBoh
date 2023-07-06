@@ -10,17 +10,17 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
-    let appGroup = AppGroup()
+    
     var data:(data:[(HandUnit.Status,Int)],total:Int) {
-        return appGroup.loadGameData() ?? (data:[(.가위,0),(.바위,0),(.보,0)],total:0)
+        return AppGroup().loadGameData() ?? (data:[(.가위,0),(.바위,0),(.보,0)],total:0)
     }
     
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: [(.가위,0),(.바위,0),(.보,0)],
-            total: 0
+            data: [(.가위,3),(.바위,6),(.보,9)],
+            total:18
         )
     }
 
@@ -28,8 +28,8 @@ struct Provider: IntentTimelineProvider {
         let entry = SimpleEntry(
             date: Date(),
             configuration: configuration,
-            data: [(.가위,0),(.바위,0),(.보,0)],
-            total: 0
+            data: [(.가위,3),(.바위,6),(.보,9)],
+            total: 18
         )
         completion(entry)
     }
@@ -100,8 +100,8 @@ struct widget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             widgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("가위바위보")
+        .description("가위바위보 앱의 위젯")
     }
 }
 
@@ -110,8 +110,8 @@ struct widget_Previews: PreviewProvider {
         widgetEntryView(entry: SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: [(.가위,10),(.바위,20),(.보,30)],
-            total: 60
+            data: [(.가위,3),(.바위,6),(.보,9)],
+            total: 18
         )
         
         )
