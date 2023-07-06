@@ -39,6 +39,8 @@
 		1B383F782A552D04003665EA /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F762A5526C5003665EA /* AppGroup.swift */; };
 		1B383F7A2A55329F003665EA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F792A55329F003665EA /* Color+Extensions.swift */; };
 		1B383F7B2A5532F7003665EA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F792A55329F003665EA /* Color+Extensions.swift */; };
+		1B5A782E2A5678F6005C3ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
+		1B5A782F2A5678F6005C3ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,7 @@
 		1B383F762A5526C5003665EA /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		1B383F792A55329F003665EA /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		1B383F7C2A556131003665EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1B5A78302A5678F6005C3ECC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +255,7 @@
 				1B28865B2A19DFB200B1244B /* HandUnit.swift */,
 				1B2886542A19D60C00B1244B /* GameManager.swift */,
 				1B383F762A5526C5003665EA /* AppGroup.swift */,
+				1B5A78312A5678F6005C3ECC /* InfoPlist.strings */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -392,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B28862E2A18F77500B1244B /* Preview Assets.xcassets in Resources */,
+				1B5A782E2A5678F6005C3ECC /* InfoPlist.strings in Resources */,
 				1B28862B2A18F77500B1244B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B383F612A55007C003665EA /* Assets.xcassets in Resources */,
+				1B5A782F2A5678F6005C3ECC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +500,17 @@
 			targetProxy = 1B383F652A55007C003665EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B5A78312A5678F6005C3ECC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B5A78302A5678F6005C3ECC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1B2886452A18F77500B1244B /* Debug */ = {
@@ -624,7 +641,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaweeBaweeBoh/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "가위바위보";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -659,7 +675,6 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaweeBaweeBoh/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "가위바위보";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -767,7 +782,6 @@
 				DEVELOPMENT_TEAM = QU9EPTU238;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "가위바위보";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -796,7 +810,6 @@
 				DEVELOPMENT_TEAM = QU9EPTU238;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "가위바위보";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
