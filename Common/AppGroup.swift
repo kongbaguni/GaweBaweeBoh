@@ -12,7 +12,7 @@ import WidgetKit
 
 struct AppGroup {
     static func makedFileURL(fileName:String)->URL? {
-        let sharedContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.net.kongbaguni")
+        let sharedContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.net.kongbaguni.share")
         return sharedContainer?.appendingPathComponent(fileName)
     }
     

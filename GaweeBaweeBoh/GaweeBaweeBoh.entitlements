@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.net.kongbaguni</string>
+		<string>group.net.kongbaguni.share</string>
 	</array>
 </dict>
 </plist>
