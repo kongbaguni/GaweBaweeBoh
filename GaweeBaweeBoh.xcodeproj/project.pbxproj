@@ -25,6 +25,7 @@
 		1B0551582A56A717002904B5 /* HandUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B28865B2A19DFB200B1244B /* HandUnit.swift */; };
 		1B0551592A56A71D002904B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
 		1B05515A2A56A734002904B5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F4A2A54F039003665EA /* GraphView.swift */; };
+		1B05515B2A56A8EF002904B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B28862A2A18F77500B1244B /* Assets.xcassets */; };
 		1B2886272A18F77400B1244B /* GaweeBaweeBohApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */; };
 		1B2886292A18F77400B1244B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886282A18F77400B1244B /* ContentView.swift */; };
 		1B28862B2A18F77500B1244B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B28862A2A18F77500B1244B /* Assets.xcassets */; };
@@ -316,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0551482A56A6FC002904B5 /* Assets.xcassets in Resources */,
+				1B05515B2A56A8EF002904B5 /* Assets.xcassets in Resources */,
 				1B0551592A56A71D002904B5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

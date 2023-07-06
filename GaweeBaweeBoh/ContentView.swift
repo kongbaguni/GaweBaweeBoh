@@ -17,13 +17,13 @@ struct ContentView: View {
     }
 //    init() {
 //        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { noti in
-//            AppGroup().saveGameData()
+//            AppGroup.saveGameData()
 //        }
 //    }
     @State var data:[(HandUnit.Status,Int)] = [] {
         didSet {
             DispatchQueue.global().async {
-                AppGroup().saveGameData()
+                AppGroup.saveGameData()
             }
         }
     }

@@ -12,7 +12,7 @@ import Intents
 struct Provider: IntentTimelineProvider {
     
     var data:(data:[(HandUnit.Status,Int)],total:Int) {
-        return AppGroup().loadGameData() ?? (data:[(.가위,10),(.바위,10),(.보,10)],total:30)
+        return AppGroup.loadGameData() ?? (data:[(.가위,10),(.바위,10),(.보,10)],total:30)
     }
     
     func placeholder(in context: Context) -> SimpleEntry {

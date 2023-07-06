@@ -9,15 +9,14 @@ import Foundation
 import SwiftUI
 import WidgetKit
 
-fileprivate let id = "group.net.kongbaguni"
 
 struct AppGroup {
-    func makedFileURL(fileName:String)->URL? {
-        let sharedContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: id)
+    static func makedFileURL(fileName:String)->URL? {
+        let sharedContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.net.kongbaguni")
         return sharedContainer?.appendingPathComponent(fileName)
     }
     
-    func save(dic:[String:Any], url:URL) {
+    static func save(dic:[String:Any], url:URL) {
         do {
             let data = try JSONSerialization.data(withJSONObject: dic,options: [])
             try data.write(to: url)
@@ -26,8 +25,7 @@ struct AppGroup {
         }
     }
     
-    func saveGameData() {
-
+    static func saveGameData() {
         var dic:[String:Any] = [
             "totalCount" : GameManager.shared.units.count,
         ]
@@ -51,7 +49,7 @@ struct AppGroup {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    func load(fileUrl:URL)->[String:Any]? {
+    static func load(fileUrl:URL)->[String:Any]? {
         do {
             let data = try Data(contentsOf: fileUrl)
             let dic = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
@@ -62,8 +60,9 @@ struct AppGroup {
         return nil
     }
     
-    func loadGameData()->(data:[(HandUnit.Status,Int)],total:Int)? {
-        if let data = load(fileUrl: makedFileURL(fileName: "game")!),
+    static func loadGameData()->(data:[(HandUnit.Status,Int)],total:Int)? {
+        if let fileUrl = makedFileURL(fileName: "game"),
+           let data = load(fileUrl: fileUrl),
            let d = data["data"] as? [String:Int],
            let t = data["totalCount"] as? Int {
             var rd:[(HandUnit.Status,Int)] = []

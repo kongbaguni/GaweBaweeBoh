@@ -21,8 +21,7 @@ struct GraphView: View {
                         Rectangle()
                             .foregroundColor(data[idx].0.colorValue)
                             .frame(width: w)
-                        Text(data[idx].0.stringValue)
-                            .foregroundColor(.primary)
+                        data[idx].0.imageView.padding(5)
                     }
                 }
                 

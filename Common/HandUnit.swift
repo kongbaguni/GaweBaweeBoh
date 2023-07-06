@@ -26,7 +26,14 @@ class HandUnit : Unit {
             case .바위: return .blue
             case .보: return .orange
             }
-
+        }
+        
+        var imageView:some View {
+            switch self {
+            case .가위: return Image("gawee").resizable().scaledToFit()
+            case .바위: return Image("bawee").resizable().scaledToFit()
+            case .보: return Image("boh").resizable().scaledToFit()
+            }
         }
     }
     
