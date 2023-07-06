@@ -68,23 +68,43 @@ struct widgetEntryView : View {
     var body: some View {
         VStack {
             if(entry.data.count == 0) {
-                Image("gawee")
-                    .resizable()
-                    .scaledToFit()
-                    .border(.primary,width:1)
-            }
-            ForEach(0..<entry.data.count, id:\.self) { idx in
+                Spacer()
                 HStack {
-                    Text(entry.data[idx].0.stringValue)
-                        .foregroundColor(entry.data[idx].0.colorValue)
-                    Text("\(entry.data[idx].1)")
-                    Spacer()
+                    Image("gawee")
+                        .resizable()
+                        .scaledToFit()
+                    Image("bawee")
+                        .resizable()
+                        .scaledToFit()
+                    Image("boh")
+                        .resizable()
+                        .scaledToFit()
                 }
+                .shadow(radius: 10)
+                
+                Text("가위 바위 보")
+                    .foregroundColor(.secondary)
+                    .font(.headline)
+                    .bold()
+                Spacer()
             }
-            GraphView(data: entry.data, total: entry.total)
+            else {
+                ForEach(0..<entry.data.count, id:\.self) { idx in
+                    HStack {
+                        Text(entry.data[idx].0.stringValue)
+                            .foregroundColor(entry.data[idx].0.colorValue)
+                        Text("\(entry.data[idx].1)")
+                        Spacer()
+                    }
+                }
+                GraphView(data: entry.data, total: entry.total)
+            }
         }
         .padding(20)
         .background(Color("WidgetBackground"))
+        .onAppear {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
 }
 
@@ -105,8 +125,8 @@ struct widget_Previews: PreviewProvider {
         widgetEntryView(entry: SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: [(.가위,10),(.바위,10),(.보,10)],
-            total: 30
+            data: [],
+            total: 0
         )
         
         )
