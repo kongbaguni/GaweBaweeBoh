@@ -81,20 +81,10 @@ struct widgetEntryView : View {
                     Spacer()
                 }
             }
-            GeometryReader { proxy in
-                HStack {
-                    if(entry.total > 0) {
-                        ForEach(0..<entry.data.count, id:\.self) { idx in
-                            let p = Double(entry.data[idx].1) / Double(entry.total)
-                            Rectangle()
-                                .foregroundColor(entry.data[idx].0.colorValue)
-                                .frame(width: (proxy.size.width - 20) * p)
-                        }
-                    }
-                    Spacer()
-                }
-            }
-        }.padding(20)    
+            GraphView(data: entry.data, total: entry.total)
+        }
+        .padding(20)
+        .background(Color("WidgetBackground"))
     }
 }
 

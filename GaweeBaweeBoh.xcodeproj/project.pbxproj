@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0551372A56996B002904B5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F4A2A54F039003665EA /* GraphView.swift */; };
 		1B2886272A18F77400B1244B /* GaweeBaweeBohApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */; };
 		1B2886292A18F77400B1244B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886282A18F77400B1244B /* ContentView.swift */; };
 		1B28862B2A18F77500B1244B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B28862A2A18F77500B1244B /* Assets.xcassets */; };
@@ -24,7 +25,6 @@
 		1B383F552A55007B003665EA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B383F542A55007B003665EA /* WidgetKit.framework */; };
 		1B383F572A55007B003665EA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B383F562A55007B003665EA /* SwiftUI.framework */; };
 		1B383F5A2A55007B003665EA /* widgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F592A55007B003665EA /* widgetBundle.swift */; };
-		1B383F5C2A55007B003665EA /* widgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F5B2A55007B003665EA /* widgetLiveActivity.swift */; };
 		1B383F5E2A55007B003665EA /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F5D2A55007B003665EA /* widget.swift */; };
 		1B383F632A55007C003665EA /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F5F2A55007B003665EA /* widget.intentdefinition */; };
 		1B383F642A55007C003665EA /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F5F2A55007B003665EA /* widget.intentdefinition */; };
@@ -103,7 +103,6 @@
 		1B383F542A55007B003665EA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1B383F562A55007B003665EA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		1B383F592A55007B003665EA /* widgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetBundle.swift; sourceTree = "<group>"; };
-		1B383F5B2A55007B003665EA /* widgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widgetLiveActivity.swift; sourceTree = "<group>"; };
 		1B383F5D2A55007B003665EA /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		1B383F5F2A55007B003665EA /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
 		1B383F622A55007C003665EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				1B383F592A55007B003665EA /* widgetBundle.swift */,
-				1B383F5B2A55007B003665EA /* widgetLiveActivity.swift */,
 				1B383F5D2A55007B003665EA /* widget.swift */,
 				1B383F5F2A55007B003665EA /* widget.intentdefinition */,
 				1B383F622A55007C003665EA /* Info.plist */,
@@ -468,7 +466,6 @@
 				1B383F632A55007C003665EA /* widget.intentdefinition in Sources */,
 				1B383F5E2A55007B003665EA /* widget.swift in Sources */,
 				1B383F702A5500E3003665EA /* CGSIze+Extensions.swift in Sources */,
-				1B383F5C2A55007B003665EA /* widgetLiveActivity.swift in Sources */,
 				1B383F712A5500E3003665EA /* CGPoint+Extensions.swift in Sources */,
 				1B383F782A552D04003665EA /* AppGroup.swift in Sources */,
 				1B383F6F2A5500C8003665EA /* Unit.swift in Sources */,
@@ -476,6 +473,7 @@
 				1B383F6E2A5500C8003665EA /* HandUnit.swift in Sources */,
 				1B383F7B2A5532F7003665EA /* Color+Extensions.swift in Sources */,
 				1B383F6D2A5500B8003665EA /* GameManager.swift in Sources */,
+				1B0551372A56996B002904B5 /* GraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -615,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
