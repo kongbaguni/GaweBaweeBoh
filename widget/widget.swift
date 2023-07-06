@@ -66,23 +66,22 @@ struct widgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
-        GeometryReader { proxy in
-            VStack {
-                if(entry.data.count == 0) {
-                    Image("gawee")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: proxy.size.width)
-                        .border(.primary,width:1)
+        VStack {
+            if(entry.data.count == 0) {
+                Image("gawee")
+                    .resizable()
+                    .scaledToFit()
+                    .border(.primary,width:1)
+            }
+            ForEach(0..<entry.data.count, id:\.self) { idx in
+                HStack {
+                    Text(entry.data[idx].0.stringValue)
+                        .foregroundColor(entry.data[idx].0.colorValue)
+                    Text("\(entry.data[idx].1)")
+                    Spacer()
                 }
-                ForEach(0..<entry.data.count, id:\.self) { idx in
-                    HStack {                        
-                        Text(entry.data[idx].0.stringValue)
-                            .foregroundColor(entry.data[idx].0.colorValue)
-                        Text("\(entry.data[idx].1)")
-                        Spacer()
-                    }
-                }
+            }
+            GeometryReader { proxy in
                 HStack {
                     if(entry.total > 0) {
                         ForEach(0..<entry.data.count, id:\.self) { idx in
@@ -90,13 +89,12 @@ struct widgetEntryView : View {
                             Rectangle()
                                 .foregroundColor(entry.data[idx].0.colorValue)
                                 .frame(width: (proxy.size.width - 20) * p)
-                        }                        
+                        }
                     }
                     Spacer()
                 }
             }
-        }.padding(20)
-        
+        }.padding(20)    
     }
 }
 
