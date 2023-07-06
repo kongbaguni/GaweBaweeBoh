@@ -44,7 +44,9 @@ struct ContentView: View {
                         context.stroke(Path(rectangle), with: .color(color), lineWidth: CGFloat(i+1))
                     }
                     
-                    context.draw(Text("unit : \(GameManager.shared.units.count) count : \(count)"), in: .init(x: 10, y: 100, width: 200, height: 50))
+                    context.draw(
+                        Text("\(GameManager.shared.units.count)").foregroundColor(.random).font(.largeTitle).bold(),
+                        in: .init(x: 20, y: .safeAreaInsetTop , width: 200, height: 50))
                     
                     var d:[HandUnit.Status:Int] = [:]
                     for unit in GameManager.shared.units {

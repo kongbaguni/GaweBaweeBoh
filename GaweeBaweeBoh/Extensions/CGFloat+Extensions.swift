@@ -12,4 +12,8 @@ extension CGFloat {
     static var safeAreaInsetBottom:CGFloat {
         return ((UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.bottom ?? 0) + 20
     }
+    static var safeAreaInsetTop:CGFloat {
+        return ((UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.top ?? 0)
+
+    }
 }
