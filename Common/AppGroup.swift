@@ -7,6 +7,8 @@
 
 import Foundation
 import SwiftUI
+import WidgetKit
+
 fileprivate let id = "group.net.kongbaguni"
 
 struct AppGroup {
@@ -46,6 +48,7 @@ struct AppGroup {
         
         dic["data"] = data
         save(dic: dic, url: makedFileURL(fileName: "game")!)
+        WidgetCenter.shared.reloadAllTimelines()
     }
     
     func load(fileUrl:URL)->[String:Any]? {
