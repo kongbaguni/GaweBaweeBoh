@@ -15,6 +15,7 @@ class GameManager {
     
     func process() {
         for (idx,unit) in units.enumerated() {
+            unit.limit = Int(size.height * 2);
             unit.process()
             
             let test = size.isOver(rect: unit.rect)
@@ -24,7 +25,7 @@ class GameManager {
             if(test.y) {
                 unit.movement.height *= -1
             }
-            
+                        
             for unit2 in units {
                 if(unit.isCrash(targrt: unit2)) {
 //                    unit.movement.width *= -1
@@ -33,10 +34,10 @@ class GameManager {
 //                    unit2.movement.height *= -1
                 }
             }
-            
-            if(unit.count > 1000) {
+                        
+            if unit.isLimitOver {
                 units.remove(at: idx)
-            }            
+            }
         }
     }
     

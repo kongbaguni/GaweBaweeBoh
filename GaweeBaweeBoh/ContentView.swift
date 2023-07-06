@@ -24,64 +24,62 @@ struct ContentView: View {
     }
     @State var data:[(HandUnit.Status,Int)] = []
     @State var total = 0
+    let colors:[Color] = [
+        .random, .random, .random,.random, .random,.random,.random,.random, .random,.random, .random,.random
+    ]
+    
     var body: some View {
-        VStack {
-            Canvas{context,size in
-                GameManager.shared.size = size
-                context.draw(Text("unit : \(GameManager.shared.units.count) count : \(count)"), in: .init(x: 10, y: -top, width: 200, height: 50))
-                var d:[HandUnit.Status:Int] = [:]
-                for unit in GameManager.shared.units {
-                    unit.draw(context: context)
-                    if let status = (unit as? HandUnit)?.status {
-                        if(d[status] == nil) {
-                            d[status] = 0
-                        } else {
-                            d[status]! += 1
+        GeometryReader { proxy in
+            VStack {
+                Canvas{ context,size in
+                    GameManager.shared.size = size
+                    for i in 0...10 {
+                        let a = CGFloat((count + i * 52) % Int(size.width / 2))
+                        let rectangle = CGRect(
+                            x: a,
+                            y: a ,
+                            width: size.width - a * 2,
+                            height: size.height - a * 2)
+                        let color = colors[i % colors.count].opacity(0.5)
+                        context.stroke(Path(rectangle), with: .color(color), lineWidth: CGFloat(i+1))
+                    }
+                    
+                    context.draw(Text("unit : \(GameManager.shared.units.count) count : \(count)"), in: .init(x: 10, y: 100, width: 200, height: 50))
+                    
+                    var d:[HandUnit.Status:Int] = [:]
+                    for unit in GameManager.shared.units {
+                        unit.draw(context: context)
+                        if let status = (unit as? HandUnit)?.status {
+                            if(d[status] == nil) {
+                                d[status] = 0
+                            } else {
+                                d[status]! += 1
+                            }
                         }
                     }
-                }
-                DispatchQueue.main.async {
-                    total = GameManager.shared.units.count
-                    data = []
-                    for i in d {
-                        data.append(i)
+                    DispatchQueue.main.async {
+                        total = GameManager.shared.units.count
+                        data = []
+                        for i in d {
+                            data.append(i)
+                        }
+                        data.sort { a, b in
+                            return a.1 > b.1
+                        }
+                        
                     }
-                    data.sort { a, b in
-                        return a.1 > b.1
+                    
+                    if(count % 10 == 0) {
+                        GameManager.shared.units.append(HandUnit(status: HandUnit.Status(rawValue: (count / 10) % 3)!))
                     }
-
                 }
                 
-                if(count % 10 == 0) {
-                    GameManager.shared.units.append(HandUnit(status: HandUnit.Status(rawValue: (count / 10) % 3)!))
-                }
+                GraphView(data: data, total: total)
+                    .frame(height: 30)
+                    .padding(.bottom,.safeAreaInsetBottom)
+                
+                
             }
-            GraphView(data: data, total: total)
-            .frame(height: 50)
-            .padding(.bottom,.safeAreaInsetBottom)
-
-                        
-//            HStack {
-//                Button {
-//                    GameManager.shared.units.append(HandUnit(status: .가위))
-//                } label: {
-//                    Text("가위")
-//                }
-//                Button {
-//                    GameManager.shared.units.append(HandUnit(status: .바위))
-//                } label: {
-//                    Text("바위")
-//                }
-//                Button {
-//                    GameManager.shared.units.append(HandUnit(status: .보))
-//                } label: {
-//                    Text("보")
-//                }
-//
-//            }
-//            .padding(.bottom,
-//                     (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.bottom ?? 0)
-
         }
         .ignoresSafeArea(.all)
         .onAppear {

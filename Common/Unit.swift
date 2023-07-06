@@ -20,8 +20,8 @@ class Unit {
               y: rect.origin.y + rect.size.height * 0.5)
     }
     
-    var rect:CGRect = .init(x: .random(in: 50...250),
-                            y: .random(in: 50...450),
+    var rect:CGRect = .init(x: .random(in: 10...UIScreen.main.bounds.width - 10),
+                            y: .random(in: 50...UIScreen.main.bounds.height - 10),
                             width: 30,
                             height: 30)
     
