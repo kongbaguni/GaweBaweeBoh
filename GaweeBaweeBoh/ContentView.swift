@@ -27,7 +27,7 @@ struct ContentView: View {
 //                AppGroup.saveGameData()
 //            }
 //        }
-//    }k
+//    }
     @State var total = 0
     let colors:[Color] = [
         .random, .random, .random,.random, .random,.random,.random,.random, .random,.random, .random,.random
