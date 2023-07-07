@@ -21,7 +21,7 @@ class Unit {
     }
     
     var rect:CGRect = .init(x: .random(in: 50...UIScreen.main.bounds.width - 50),
-                            y: .random(in: 50...UIScreen.main.bounds.height - 50),
+                            y: .random(in: 50...UIScreen.main.bounds.height - 150),
                             width: 30,
                             height: 30)
     

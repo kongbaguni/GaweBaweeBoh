@@ -12,7 +12,7 @@ import Intents
 struct Provider: IntentTimelineProvider {
     
     var data:(data:[(HandUnit.Status,Int)],total:Int) {
-        return AppGroup.loadGameData() ?? (data:[(.가위,10),(.바위,10),(.보,10)],total:30)
+        return AppGroup.loadGameData() ?? (data:[],total:0)
     }
     
     func placeholder(in context: Context) -> SimpleEntry {
@@ -67,7 +67,7 @@ struct widgetEntryView : View {
 
     var body: some View {
         VStack {
-            if(entry.data.count == 0) {
+            if(entry.data.count < 3) {
                 Spacer()
                 HStack {
                     Image("gawee")
@@ -91,8 +91,8 @@ struct widgetEntryView : View {
             else {
                 ForEach(0..<entry.data.count, id:\.self) { idx in
                     HStack {
-                        Text(entry.data[idx].0.stringValue)
-                            .foregroundColor(entry.data[idx].0.colorValue)
+                        entry.data[idx].0.imageView
+                            .frame(height: 17)
                         Text("\(entry.data[idx].1)")
                         Spacer()
                     }

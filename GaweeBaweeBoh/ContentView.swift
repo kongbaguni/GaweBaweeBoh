@@ -15,18 +15,19 @@ struct ContentView: View {
     var top:CGFloat {
         (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.safeAreaInsets.top ?? 0
     }
-//    init() {
-//        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { noti in
-//            AppGroup.saveGameData()
-//        }
-//    }
-    @State var data:[(HandUnit.Status,Int)] = [] {
-        didSet {
-            DispatchQueue.global().async {
-                AppGroup.saveGameData()
-            }
+    init() {
+        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { noti in
+            AppGroup.saveGameData()
         }
     }
+    @State var data:[(HandUnit.Status,Int)] = []
+//    {
+//        didSet {
+//            DispatchQueue.global().async {
+//                AppGroup.saveGameData()
+//            }
+//        }
+//    }
     @State var total = 0
     let colors:[Color] = [
         .random, .random, .random,.random, .random,.random,.random,.random, .random,.random, .random,.random

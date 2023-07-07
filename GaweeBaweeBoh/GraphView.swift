@@ -13,18 +13,25 @@ struct GraphView: View {
     
     var body: some View {
         GeometryReader { proxy in
-            HStack {
+            HStack(
+                alignment: .top,
+                spacing: 0
+            ) {
                 ForEach(0..<data.count, id: \.self) { idx in
                     let vw = proxy.size.width
-                    let w = (CGFloat(data[idx].1) / Double(total)) * vw
+                    let w = (CGFloat(data[idx].1) / CGFloat(total)) * vw
                     ZStack {
                         Rectangle()
                             .foregroundColor(data[idx].0.colorValue)
-                            .frame(width: w)
-                        data[idx].0.imageView.padding(5)
-                    }
+                        HStack {
+                            data[idx].0.imageView
+                                .padding(.leading,5)
+                                .shadow(radius: 10)
+                            Spacer()
+                        }
+                            
+                    }.frame(width: w)
                 }
-                
             }
         }
         

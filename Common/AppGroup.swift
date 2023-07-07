@@ -11,12 +11,12 @@ import WidgetKit
 
 
 struct AppGroup {
-    static func makedFileURL(fileName:String)->URL? {
+    fileprivate static func makedFileURL(fileName:String)->URL? {
         let sharedContainer = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.net.kongbaguni.share")
         return sharedContainer?.appendingPathComponent(fileName)
     }
     
-    static func save(dic:[String:Any], url:URL) {
+    fileprivate static func save(dic:[String:Any], url:URL) {
         do {
             let data = try JSONSerialization.data(withJSONObject: dic,options: [])
             try data.write(to: url)
@@ -49,7 +49,7 @@ struct AppGroup {
         WidgetCenter.shared.reloadAllTimelines()
     }
     
-    static func load(fileUrl:URL)->[String:Any]? {
+    fileprivate static func load(fileUrl:URL)->[String:Any]? {
         do {
             let data = try Data(contentsOf: fileUrl)
             let dic = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
