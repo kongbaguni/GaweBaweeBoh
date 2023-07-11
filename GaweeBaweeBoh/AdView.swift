@@ -70,7 +70,7 @@ struct AdView : View {
                             Image(uiImage: image).resizable().scaledToFit().frame(height: 80)
                         }
                     }
-                    .padding(.trailing,2)
+                    .padding(.trailing,5)
                     .frame(width:80,height: 80)
                     
                     VStack {
