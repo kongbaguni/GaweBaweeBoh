@@ -110,7 +110,7 @@ struct AdView : View {
                             Spacer()
 //                            if let txt = callToAction {
 //                                Button {
-//                                    
+//
 //                                } label: {
 //                                    Text(txt)
 //                                }
@@ -130,7 +130,7 @@ struct AdView : View {
 class AdLoaderView : UIView {
     let loader:GADAdLoader
     let receiveAd:(_ adinfo:GADNativeAd)->()
-    
+    var pauseRequest = false
     init(receiveAd:@escaping(_ adinfo:GADNativeAd)->()) {
         self.receiveAd = receiveAd
         let option = GADMultipleAdsAdLoaderOptions()
@@ -141,7 +141,24 @@ class AdLoaderView : UIView {
                                   options: [option])
         super.init(frame: .zero)
         self.loader.delegate = self
-        self.loader.load(.init())
+        NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { [weak self] noti in
+            self?.pauseRequest = true
+        }
+        NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { [weak self] noti in
+            self?.pauseRequest = false
+            self?.loadAd()
+        }
+        loadAd()
+    }
+    
+    func loadAd() {
+        guard pauseRequest == false else {
+            return
+        }
+        loader.load(.init())
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(20)) { [weak self] in
+            self?.loadAd()
+        }
     }
     
     required init?(coder: NSCoder) {
