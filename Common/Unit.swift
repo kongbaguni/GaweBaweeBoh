@@ -41,18 +41,9 @@ class Unit {
     var lineWidth:CGFloat = 2.0
     
     var count = 0
-    var limit = 1000
-    
-    var isLimitOver:Bool {
-        count > limit
-    }
-    
-    var opacity:Double {
-        Double(limit - count) / Double(limit)
-    }
-    
+        
     func draw(context:GraphicsContext) {        
-        let color = self.color.opacity(opacity)
+        let color = self.color
         context.stroke(
                 Path(ellipseIn: rect),
                 with: .color(color),

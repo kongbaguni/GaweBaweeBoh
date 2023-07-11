@@ -45,8 +45,8 @@ class HandUnit : Unit {
     }
     
     override func draw(context: GraphicsContext) {
-        let w = rect.width * opacity
-        let h = rect.height * opacity
+        let w = rect.width 
+        let h = rect.height
         let x = (rect.width - w) * 0.5 + rect.origin.x
         let y = (rect.height - w) * 0.5 + rect.origin.y
         let newRect = CGRect(x: x, y: y, width: w, height: h)

@@ -73,15 +73,19 @@ struct ContentView: View {
                         
                     }
                     
-                    if(count % 10 == 0) {
+                    if GameManager.shared.units.count < 100 {
                         GameManager.shared.units.append(HandUnit(status: HandUnit.Status(rawValue: (count / 10) % 3)!))
                     }
                 }
                 AdView()
+                Button {
+                    GameManager.shared.units.removeAll()
+                } label: {
+                    GraphView(data: data, total: total)
+                        .frame(height: 30)
+                        .padding(.bottom,.safeAreaInsetBottom)
+                }
 
-                GraphView(data: data, total: total)
-                    .frame(height: 30)
-                    .padding(.bottom,.safeAreaInsetBottom)
                 
                 
             }
