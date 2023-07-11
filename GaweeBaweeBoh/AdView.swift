@@ -29,9 +29,6 @@ struct AdSubView : UIViewRepresentable {
 }
 
 struct AdView : View {
-    static let ad = AdLoaderView { adinfo in
-        print(adinfo)
-    }
     @State var headline:String? = nil
     @State var bodyStr:String? = nil
     @State var adImage:Image? = nil
