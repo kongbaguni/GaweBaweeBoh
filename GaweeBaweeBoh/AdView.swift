@@ -98,23 +98,23 @@ struct AdView : View {
                                 Spacer()
                             }
                         }
-                        if let txt = callToAction {
-                            HStack {
-                                if let txt = starRating {
-                                    Text("rating :")
-                                    Text(txt)
-                                }
-                                if let txt = price {
-                                    Text("price :")
-                                    Text(txt)
-                                }
-                                Spacer()
+                        HStack {
+                            if let txt = starRating {
+                                Text("rating :")
+                                Text(txt)
+                            }
+                            if let txt = price {
+                                Text("price :")
+                                Text(txt)
+                            }
+                            Spacer()
+//                            if let txt = callToAction {
 //                                Button {
-//
+//                                    
 //                                } label: {
 //                                    Text(txt)
 //                                }
-                            }
+//                            }
                         }
                     }
 
