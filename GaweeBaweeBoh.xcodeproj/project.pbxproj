@@ -26,6 +26,11 @@
 		1B0551592A56A71D002904B5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
 		1B05515A2A56A734002904B5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F4A2A54F039003665EA /* GraphView.swift */; };
 		1B05515B2A56A8EF002904B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B28862A2A18F77500B1244B /* Assets.xcassets */; };
+		1B248B612A5CE1DA00A312DD /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 1B248B602A5CE1DA00A312DD /* GoogleMobileAds */; };
+		1B248B632A5CE43100A312DD /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B248B622A5CE43100A312DD /* AdView.swift */; };
+		1B248B662A5CE5FF00A312DD /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B248B652A5CE5FF00A312DD /* UIApplication+Extensions.swift */; };
+		1B248B6C2A5D290500A312DD /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B248B6B2A5D290500A312DD /* ImageView.swift */; };
+		1B248B6F2A5D39D200A312DD /* ActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 1B248B6E2A5D39D200A312DD /* ActivityIndicatorView */; };
 		1B2886272A18F77400B1244B /* GaweeBaweeBohApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */; };
 		1B2886292A18F77400B1244B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2886282A18F77400B1244B /* ContentView.swift */; };
 		1B28862B2A18F77500B1244B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B28862A2A18F77500B1244B /* Assets.xcassets */; };
@@ -74,6 +79,9 @@
 		1B0551462A56A6FB002904B5 /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
 		1B0551472A56A6FC002904B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B0551492A56A6FC002904B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B248B622A5CE43100A312DD /* AdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
+		1B248B652A5CE5FF00A312DD /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
+		1B248B6B2A5D290500A312DD /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		1B2886232A18F77400B1244B /* GaweeBaweeBoh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GaweeBaweeBoh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaweeBaweeBohApp.swift; sourceTree = "<group>"; };
 		1B2886282A18F77400B1244B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B248B6F2A5D39D200A312DD /* ActivityIndicatorView in Frameworks */,
+				1B248B612A5CE1DA00A312DD /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +174,9 @@
 				1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */,
 				1B2886282A18F77400B1244B /* ContentView.swift */,
 				1B383F4A2A54F039003665EA /* GraphView.swift */,
+				1B248B622A5CE43100A312DD /* AdView.swift */,
 				1B28862C2A18F77500B1244B /* Preview Content */,
+				1B248B6B2A5D290500A312DD /* ImageView.swift */,
 			);
 			path = GaweeBaweeBoh;
 			sourceTree = "<group>";
@@ -230,6 +242,7 @@
 		1B383F732A5501DC003665EA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1B248B652A5CE5FF00A312DD /* UIApplication+Extensions.swift */,
 				1B383F4C2A54F9C9003665EA /* CGFloat+Extensions.swift */,
 			);
 			path = Extensions;
@@ -270,6 +283,10 @@
 				1B05514D2A56A6FC002904B5 /* PBXTargetDependency */,
 			);
 			name = GaweeBaweeBoh;
+			packageProductDependencies = (
+				1B248B602A5CE1DA00A312DD /* GoogleMobileAds */,
+				1B248B6E2A5D39D200A312DD /* ActivityIndicatorView */,
+			);
 			productName = GaweeBaweeBoh;
 			productReference = 1B2886232A18F77400B1244B /* GaweeBaweeBoh.app */;
 			productType = "com.apple.product-type.application";
@@ -301,6 +318,10 @@
 				Base,
 			);
 			mainGroup = 1B28861A2A18F77400B1244B;
+			packageReferences = (
+				1B248B5F2A5CE1DA00A312DD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				1B248B6D2A5D39D200A312DD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */,
+			);
 			productRefGroup = 1B2886242A18F77400B1244B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,9 +379,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B248B6C2A5D290500A312DD /* ImageView.swift in Sources */,
+				1B248B662A5CE5FF00A312DD /* UIApplication+Extensions.swift in Sources */,
 				1B05514B2A56A6FC002904B5 /* widget.intentdefinition in Sources */,
 				1B383F772A5526C5003665EA /* AppGroup.swift in Sources */,
 				1B2886512A18FAF400B1244B /* Unit.swift in Sources */,
+				1B248B632A5CE43100A312DD /* AdView.swift in Sources */,
 				1B383F4D2A54F9C9003665EA /* CGFloat+Extensions.swift in Sources */,
 				1B2886552A19D60C00B1244B /* GameManager.swift in Sources */,
 				1B2886582A19D73600B1244B /* CGSIze+Extensions.swift in Sources */,
@@ -414,7 +438,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBoh.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -443,7 +467,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBoh.widget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -593,7 +617,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBoh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -628,7 +653,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kongbaguni.GaweeBaweeBoh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -668,6 +694,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1B248B5F2A5CE1DA00A312DD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		1B248B6D2A5D39D200A312DD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/ActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1B248B602A5CE1DA00A312DD /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B248B5F2A5CE1DA00A312DD /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		1B248B6E2A5D39D200A312DD /* ActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B248B6D2A5D39D200A312DD /* XCRemoteSwiftPackageReference "ActivityIndicatorView" */;
+			productName = ActivityIndicatorView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1B28861B2A18F77400B1244B /* Project object */;
 }

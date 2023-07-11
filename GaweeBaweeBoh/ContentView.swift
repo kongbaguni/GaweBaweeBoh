@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import GoogleMobileAds
 
 struct ContentView: View {
     @State var csize:CGFloat = 100
@@ -19,15 +20,11 @@ struct ContentView: View {
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { noti in
             AppGroup.saveGameData()
         }
+        GADMobileAds.sharedInstance().start()
     }
+    
     @State var data:[(HandUnit.Status,Int)] = []
-//    {
-//        didSet {
-//            DispatchQueue.global().async {
-//                AppGroup.saveGameData()
-//            }
-//        }
-//    }
+
     @State var total = 0
     let colors:[Color] = [
         .random, .random, .random,.random, .random,.random,.random,.random, .random,.random, .random,.random
@@ -48,7 +45,7 @@ struct ContentView: View {
                         let color = colors[i % colors.count].opacity(0.5)
                         context.stroke(Path(rectangle), with: .color(color), lineWidth: CGFloat(i+1))
                     }
-                    
+
                     context.draw(
                         Text("\(GameManager.shared.units.count)").foregroundColor(.random).font(.largeTitle).bold(),
                         in: .init(x: 20, y: .safeAreaInsetTop , width: 200, height: 50))
@@ -80,7 +77,8 @@ struct ContentView: View {
                         GameManager.shared.units.append(HandUnit(status: HandUnit.Status(rawValue: (count / 10) % 3)!))
                     }
                 }
-                
+                AdView()
+
                 GraphView(data: data, total: total)
                     .frame(height: 30)
                     .padding(.bottom,.safeAreaInsetBottom)
