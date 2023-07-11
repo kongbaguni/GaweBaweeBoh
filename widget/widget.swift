@@ -67,7 +67,20 @@ struct widgetEntryView : View {
 
     var body: some View {
         VStack {
-            if(entry.data.count < 3) {
+            switch (entry.data.count) {
+            case 1:
+                entry.data[0].0.imageView
+            case 2,3:
+                ForEach(0..<entry.data.count, id:\.self) { idx in
+                    HStack {
+                        entry.data[idx].0.imageView
+                            .frame(height: 17)
+                        Text("\(entry.data[idx].1)")
+                        Spacer()
+                    }
+                }
+                GraphView(data: entry.data, total: entry.total)
+            default:
                 Spacer()
                 HStack {
                     Image("gawee")
@@ -88,17 +101,7 @@ struct widgetEntryView : View {
                     .bold()
                 Spacer()
             }
-            else {
-                ForEach(0..<entry.data.count, id:\.self) { idx in
-                    HStack {
-                        entry.data[idx].0.imageView
-                            .frame(height: 17)
-                        Text("\(entry.data[idx].1)")
-                        Spacer()
-                    }
-                }
-                GraphView(data: entry.data, total: entry.total)
-            }
+            
         }
         .padding(20)
         .background(Color("WidgetBackground"))
@@ -125,8 +128,8 @@ struct widget_Previews: PreviewProvider {
         widgetEntryView(entry: SimpleEntry(
             date: Date(),
             configuration: ConfigurationIntent(),
-            data: [],
-            total: 0
+            data: [(.가위,100),(.바위,200),(.보,300)],
+            total: 600
         )
         
         )
