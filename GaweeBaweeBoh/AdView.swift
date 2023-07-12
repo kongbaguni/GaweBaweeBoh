@@ -17,6 +17,7 @@ fileprivate let adId = "ca-app-pub-7714069006629518/1560510288"
 
 extension Notification.Name {
     static let googleAdNativeAdClick = Notification.Name("googleAdNativeAdClick_observer")
+    static let googleAdPlayVideo = Notification.Name("googleAdPlayVideo_observer")
 }
 
 struct AdSubView : UIViewRepresentable {
@@ -124,21 +125,18 @@ struct AdView : View {
                             Spacer()
                             if isVideoAd {
                                 Button {
-                                    mediaContent?.videoController.play()
+                                    NotificationCenter.default.post(name: .googleAdPlayVideo, object: nil)
                                 } label: {
                                     Image(systemName: "play.rectangle")
+                                        .foregroundColor(.white)
                                 }
                             }
                             if let txt = callToAction {
                                 Button {
                                     NotificationCenter.default.post(name: .googleAdNativeAdClick, object: nativeAd)
-//                                    if let advertiser = advertiser {
-//                                        if let url = URL(string: advertiser) {
-//                                            UIApplication.shared.open(url)
-//                                        }
-//                                    }
                                 } label: {
                                     Text(txt)
+                                        .foregroundColor(.white)
                                 }
                             }
                         }
@@ -178,7 +176,13 @@ class AdLoaderView : GADMediaView {
         NotificationCenter.default.addObserver(forName: .googleAdNativeAdClick, object: nil, queue: nil) { [weak self] noti in
             if let ad = noti.object as? GADNativeAd {
                 self?.nativeAdDidRecordClick(ad)
+                self?.nativeAdDidRecordSwipeGestureClick(ad)
+                self?.nativeAdIsMuted(ad)
+                
             }
+        }
+        NotificationCenter.default.addObserver(forName: .googleAdPlayVideo, object: nil, queue: nil) { [weak self] noti in
+            self?.mediaContent?.videoController.play()
         }
         loadAd()        
     }
@@ -221,6 +225,8 @@ extension AdLoaderView : GADNativeAdLoaderDelegate {
 extension AdLoaderView : GADNativeAdDelegate {
     func nativeAdIsMuted(_ nativeAd: GADNativeAd) {
         print("nativeAdDelegate : \(#function) \(#line)")
+        print("nativeAdDelegate \(nativeAd.advertiser ?? "없다")")
+        print("nativeAdDelegate \(nativeAd.advertiser ?? "없다")")
     }
     func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
         print("nativeAdDelegate : \(#function) \(#line)")
@@ -245,6 +251,7 @@ extension AdLoaderView : GADNativeAdDelegate {
     }
     func nativeAdDidRecordSwipeGestureClick(_ nativeAd: GADNativeAd) {
         print("nativeAdDelegate : \(#function) \(#line)")
+        print("nativeAdDelegate \(nativeAd.advertiser ?? "없다")")
     }
     
 }
