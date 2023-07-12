@@ -14,12 +14,12 @@ struct GraphView: View {
     var body: some View {
         GeometryReader { proxy in
             HStack(
-                alignment: .top,
+                alignment: .center,
                 spacing: 0
             ) {
                 ForEach(0..<data.count, id: \.self) { idx in
                     let vw = proxy.size.width
-                    let w = (CGFloat(data[idx].1) / CGFloat(total)) * vw
+                    let w = vw * (Double(data[idx].1+1) / Double(total))
                     ZStack {
                         Rectangle()
                             .foregroundColor(data[idx].0.colorValue)
@@ -32,6 +32,7 @@ struct GraphView: View {
                             
                     }.frame(width: w)
                 }
+                Spacer()
             }.background(Color.backgroundColor1)
         }
         
