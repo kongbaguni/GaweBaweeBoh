@@ -26,6 +26,15 @@ struct AdSubView : UIViewRepresentable {
         let view = AdLoaderView { adinfo in
             receiveAd(adinfo)
         }
+        
+//        let choiceView = GADAdChoicesView(frame: view.frame)
+//        view.addSubview(choiceView)
+//        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        choiceView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        choiceView.layer.zPosition = 100
+//        choiceView.backgroundColor = .orange
+//        choiceView.alpha = 0.5
+//
         return view
     }
     func updateUIView(_ uiView: UIViewType, context: Context) {
@@ -67,9 +76,8 @@ struct AdView : View {
                 isloading = false
                 isVideoAd = adinfo.mediaContent.hasVideoContent
                 mediaContent = adinfo.mediaContent
-                
             }
-            .fixedSize().opacity(0.5).frame(height: 80)
+            .fixedSize().opacity(0.5)
             ActivityIndicatorView(isVisible: $isloading, type: .default())
                 .frame(width: 40, height: 40)
 
@@ -123,22 +131,22 @@ struct AdView : View {
 //                                Text(txt)
 //                            }
                             Spacer()
-                            if isVideoAd {
-                                Button {
-                                    NotificationCenter.default.post(name: .googleAdPlayVideo, object: nil)
-                                } label: {
-                                    Image(systemName: "play.rectangle")
-                                        .foregroundColor(.primary)
-                                }
-                            }
-                            if let txt = callToAction {
-                                Button {
-                                    NotificationCenter.default.post(name: .googleAdNativeAdClick, object: nativeAd)
-                                } label: {
-                                    Text(txt)
-                                        .foregroundColor(.primary)
-                                }
-                            }
+//                            if isVideoAd {
+//                                Button {
+//                                    NotificationCenter.default.post(name: .googleAdPlayVideo, object: nil)
+//                                } label: {
+//                                    Image(systemName: "play.rectangle")
+//                                        .foregroundColor(.primary)
+//                                }
+//                            }
+//                            if let txt = callToAction {
+//                                Button {
+//                                    NotificationCenter.default.post(name: .googleAdNativeAdClick, object: nativeAd)
+//                                } label: {
+//                                    Text(txt)
+//                                        .foregroundColor(.primary)
+//                                }
+//                            }
                         }
                     }
                 }
@@ -146,9 +154,18 @@ struct AdView : View {
             .padding(10)
             .shadow(color: .black, radius: 10, x: 5, y: 5)
             
-           
-
-        }
+            HStack {
+                Text("AD")
+                    .font(.system(size: 10))
+                    .padding(5)
+                    .background(.orange)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.leading,5)
+                    .shadow(color:.black, radius: 10, x:5,y:5)
+                Spacer()
+            }
+        }.frame(height: 100)
     }
 }
 
@@ -157,6 +174,7 @@ class AdLoaderView : GADMediaView {
     let receiveAd:(_ adinfo:GADNativeAd)->()
     var pauseRequest = false
     init(receiveAd:@escaping(_ adinfo:GADNativeAd)->()) {
+        
         self.receiveAd = receiveAd
         let option = GADMultipleAdsAdLoaderOptions()
         option.numberOfAds = 1
@@ -165,6 +183,7 @@ class AdLoaderView : GADMediaView {
                                   adTypes: [.native],
                                   options: [option])
         super.init(frame: .zero)
+        
         self.loader.delegate = self
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { [weak self] noti in
             self?.pauseRequest = true
@@ -173,14 +192,13 @@ class AdLoaderView : GADMediaView {
             self?.pauseRequest = false
             self?.loadAd()
         }
-        NotificationCenter.default.addObserver(forName: .googleAdNativeAdClick, object: nil, queue: nil) { [weak self] noti in
-            if let ad = noti.object as? GADNativeAd {
-                self?.nativeAdDidRecordClick(ad)
-                self?.nativeAdDidRecordSwipeGestureClick(ad)
-                self?.nativeAdIsMuted(ad)
-                
-            }
-        }
+//        NotificationCenter.default.addObserver(forName: .googleAdNativeAdClick, object: nil, queue: nil) { [weak self] noti in
+//            if let ad = noti.object as? GADNativeAd {
+////                self?.nativeAdDidRecordClick(ad)
+////                self?.nativeAdDidRecordSwipeGestureClick(ad)
+////                self?.nativeAdIsMuted(ad)
+//            }
+//        }
         NotificationCenter.default.addObserver(forName: .googleAdPlayVideo, object: nil, queue: nil) { [weak self] noti in
             self?.mediaContent?.videoController.play()
         }
@@ -197,6 +215,10 @@ class AdLoaderView : GADMediaView {
         }
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -210,10 +232,12 @@ extension AdLoaderView : GADNativeAdLoaderDelegate {
         nativeAd.registerClickConfirmingView(self)
         nativeAd.recordCustomClickGesture()
         print("nativeAdDelegate : setDelegate \(nativeAd.isCustomClickGestureEnabled)")
+        
         mediaContent = nativeAd.mediaContent
         receiveAd(nativeAd)
         if nativeAd.mediaContent.hasVideoContent {
             nativeAd.mediaContent.videoController.play()
+            nativeAd.mediaContent.videoController.delegate = self
         }
     }
     
@@ -257,4 +281,22 @@ extension AdLoaderView : GADNativeAdDelegate {
         print("nativeAdDelegate \(nativeAd.advertiser ?? "없다")")
     }
     
+}
+
+extension AdLoaderView : GADVideoControllerDelegate {
+    func videoControllerDidMuteVideo(_ videoController: GADVideoController) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func videoControllerDidPlayVideo(_ videoController: GADVideoController) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func videoControllerDidPauseVideo(_ videoController: GADVideoController) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func videoControllerDidUnmuteVideo(_ videoController: GADVideoController) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func videoControllerDidEndVideoPlayback(_ videoController: GADVideoController) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
 }
