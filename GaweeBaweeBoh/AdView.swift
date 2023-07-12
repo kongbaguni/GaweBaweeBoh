@@ -212,6 +212,9 @@ extension AdLoaderView : GADNativeAdLoaderDelegate {
         print("nativeAdDelegate : setDelegate \(nativeAd.isCustomClickGestureEnabled)")
         mediaContent = nativeAd.mediaContent
         receiveAd(nativeAd)
+        if nativeAd.mediaContent.hasVideoContent {
+            nativeAd.mediaContent.videoController.play()
+        }
     }
     
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
