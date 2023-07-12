@@ -192,6 +192,7 @@ class AdLoaderView : GADMediaView {
             self?.pauseRequest = false
             self?.loadAd()
         }
+
 //        NotificationCenter.default.addObserver(forName: .googleAdNativeAdClick, object: nil, queue: nil) { [weak self] noti in
 //            if let ad = noti.object as? GADNativeAd {
 ////                self?.nativeAdDidRecordClick(ad)
@@ -210,7 +211,7 @@ class AdLoaderView : GADMediaView {
             return
         }
         loader.load(.init())
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15)) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) { [weak self] in
             self?.loadAd()
         }
     }
