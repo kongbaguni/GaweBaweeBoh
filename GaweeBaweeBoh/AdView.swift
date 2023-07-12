@@ -128,7 +128,7 @@ struct AdView : View {
                                     NotificationCenter.default.post(name: .googleAdPlayVideo, object: nil)
                                 } label: {
                                     Image(systemName: "play.rectangle")
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                 }
                             }
                             if let txt = callToAction {
@@ -136,7 +136,7 @@ struct AdView : View {
                                     NotificationCenter.default.post(name: .googleAdNativeAdClick, object: nativeAd)
                                 } label: {
                                     Text(txt)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                 }
                             }
                         }
