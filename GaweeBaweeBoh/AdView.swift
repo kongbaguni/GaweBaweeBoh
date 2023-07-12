@@ -35,7 +35,7 @@ struct AdView : View {
     @State var advertiser:String? = nil
     @State var callToAction:String? = nil
     @State var price:String? = nil
-    @State var starRating:String? = nil
+    @State var starRating:NSDecimalNumber? = nil
     @State var images:[UIImage] = []
     @State var store:String? = nil
     @State var isloading = true
@@ -49,13 +49,14 @@ struct AdView : View {
                 callToAction = adinfo.callToAction
                 headline = adinfo.headline
                 bodyStr = adinfo.body
-                starRating = adinfo.starRating?.stringValue
+                starRating = adinfo.starRating
                 price = adinfo.price
                 images = adinfo.images?.map({ image in
                     return image.image ?? UIImage()
                 }) ?? []
                 store = adinfo.store
                 isloading = false
+                
             }.frame(height: 1)
             ActivityIndicatorView(isVisible: $isloading, type: .default())
                 .frame(width: 40, height: 40)
@@ -99,9 +100,11 @@ struct AdView : View {
                             }
                         }
                         HStack {
-                            if let txt = starRating {
-                                Text("rating :")
-                                Text(txt)
+                            if let value = starRating {
+                                if(value.doubleValue > 0) {
+                                    StarView(rating: value, color: .orange)
+                                        .frame(width: 100)
+                                }
                             }
                             if let txt = price {
                                 Text("price :")

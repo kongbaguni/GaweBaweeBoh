@@ -45,6 +45,7 @@
 		1B383F772A5526C5003665EA /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F762A5526C5003665EA /* AppGroup.swift */; };
 		1B383F7A2A55329F003665EA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B383F792A55329F003665EA /* Color+Extensions.swift */; };
 		1B5A782E2A5678F6005C3ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
+		1BBE50A12A5E67A80058400D /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE50A02A5E67A80058400D /* StarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		1B383F792A55329F003665EA /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		1B383F7C2A556131003665EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1B5A78302A5678F6005C3ECC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1BBE50A02A5E67A80058400D /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				1B248B622A5CE43100A312DD /* AdView.swift */,
 				1B28862C2A18F77500B1244B /* Preview Content */,
 				1B248B6B2A5D290500A312DD /* ImageView.swift */,
+				1BBE50A02A5E67A80058400D /* StarView.swift */,
 			);
 			path = GaweeBaweeBoh;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				1B28865A2A19DC2900B1244B /* CGPoint+Extensions.swift in Sources */,
 				1B2886272A18F77400B1244B /* GaweeBaweeBohApp.swift in Sources */,
 				1B383F4B2A54F039003665EA /* GraphView.swift in Sources */,
+				1BBE50A12A5E67A80058400D /* StarView.swift in Sources */,
 				1B383F7A2A55329F003665EA /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
