@@ -111,13 +111,17 @@ struct AdView : View {
                                 Text(txt)
                             }
                             Spacer()
-//                            if let txt = callToAction {
-//                                Button {
-//
-//                                } label: {
-//                                    Text(txt)
-//                                }
-//                            }
+                            if let txt = callToAction {
+                                Button {
+                                    if let advertiser = advertiser {
+                                        if let url = URL(string: advertiser) {
+                                            UIApplication.shared.open(url)
+                                        }
+                                    }
+                                } label: {
+                                    Text(txt)
+                                }
+                            }
                         }
                     }
 
@@ -168,15 +172,48 @@ class AdLoaderView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
 extension AdLoaderView : GADNativeAdLoaderDelegate {
     
     func adLoader(_ adLoader: GADAdLoader, didReceive nativeAd: GADNativeAd) {
+        nativeAd.delegate = self
+        nativeAd.enableCustomClickGestures()
+        nativeAd.registerClickConfirmingView(self)
+        nativeAd.recordCustomClickGesture()
+        print("nativeAdDelegate : setDelegate \(nativeAd.isCustomClickGestureEnabled)")
+        
         self.receiveAd(nativeAd)
     }
     
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
+        print(error.localizedDescription)
         
     }
     
 }
 
+
+extension AdLoaderView : GADNativeAdDelegate {
+    func nativeAdIsMuted(_ nativeAd: GADNativeAd) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func nativeAdDidDismissScreen(_ nativeAd: GADNativeAd) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func nativeAdWillDismissScreen(_ nativeAd: GADNativeAd) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func nativeAdWillPresentScreen(_ nativeAd: GADNativeAd) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func nativeAdDidRecordImpression(_ nativeAd: GADNativeAd) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    func nativeAdDidRecordSwipeGestureClick(_ nativeAd: GADNativeAd) {
+        print("nativeAdDelegate : \(#function) \(#line)")
+    }
+    
+}
