@@ -32,7 +32,6 @@ struct GraphView: View {
                             
                     }.frame(width: w)
                 }
-                Spacer()
             }.background(Color.backgroundColor1)
         }
         
