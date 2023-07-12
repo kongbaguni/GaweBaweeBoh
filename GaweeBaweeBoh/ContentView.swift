@@ -100,8 +100,8 @@ struct ContentView: View {
                 }
                 .background(Color.backgroundColor1)
             }
-            AdView().zIndex(-1)
-                .background(Color.backgroundColor2)
+            BannerAdView(sizeType: .GADAdSizeFullBanner, padding: .zero)
+                
             Button {
                 GameManager.shared.units.removeAll()
             } label: {
