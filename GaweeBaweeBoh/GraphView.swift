@@ -32,7 +32,7 @@ struct GraphView: View {
                             
                     }.frame(width: w)
                 }
-            }
+            }.background(Color.backgroundColor1)
         }
         
     }
@@ -48,6 +48,6 @@ struct GraphView_Previews: PreviewProvider {
             ], total: 100)
             .frame(height: 50)
             Spacer()
-        }
+        }.background(Color.yellow)
     }
 }

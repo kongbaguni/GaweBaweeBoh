@@ -37,7 +37,10 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        VStack {
+        VStack (
+            alignment: .center,
+            spacing: 0
+        ) {
             GeometryReader { proxy in
                 Canvas{ context,size in
                     GameManager.shared.size = size
@@ -95,9 +98,10 @@ struct ContentView: View {
                         )
                     }
                 }
-                .background(Color.black)
+                .background(Color.backgroundColor1)
             }
             AdView().zIndex(-1)
+                .background(Color.backgroundColor2)
             Button {
                 GameManager.shared.units.removeAll()
             } label: {
@@ -105,10 +109,8 @@ struct ContentView: View {
                     .frame(height: 30)
                     .padding(.bottom,.safeAreaInsetBottom)
             }
-            .background(Color.black)
-
-
-        }
+            .background(Color.backgroundColor1)
+        }        
         .ignoresSafeArea(.all)
         .onAppear {
             startUpdate()

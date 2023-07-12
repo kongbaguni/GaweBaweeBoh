@@ -188,7 +188,7 @@ class AdLoaderView : GADMediaView {
             return
         }
         loader.load(.init())
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(20)) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(15)) { [weak self] in
             self?.loadAd()
         }
     }

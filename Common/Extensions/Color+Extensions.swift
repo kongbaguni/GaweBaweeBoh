@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 extension Color {
+    static let backgroundColor1:Color = Color("backgroundColor1")
+    static let backgroundColor2:Color = Color("backgroundColor2")
+
     var stringValue:String {
         let uicolor = UIColor(self)
         guard let colorComponents = uicolor.cgColor.components else {
