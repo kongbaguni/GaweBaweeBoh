@@ -15,6 +15,10 @@ fileprivate let adId = "ca-app-pub-3940256099942544/3986624511"
 fileprivate let adId = "ca-app-pub-7714069006629518/1560510288"
 #endif
 
+extension Notification.Name {
+    static let googleAdNativeAdClick = Notification.Name("googleAdNativeAdClick_observer")
+}
+
 struct AdSubView : UIViewRepresentable {
     let receiveAd:(_ adinfo:GADNativeAd)->()
     func makeUIView(context: Context) -> some UIView {
@@ -24,7 +28,7 @@ struct AdSubView : UIViewRepresentable {
         return view
     }
     func updateUIView(_ uiView: UIViewType, context: Context) {
-
+        
     }
 }
 
@@ -39,9 +43,13 @@ struct AdView : View {
     @State var images:[UIImage] = []
     @State var store:String? = nil
     @State var isloading = true
+    @State var isVideoAd = false
+    @State var mediaContent:GADMediaContent? = nil
+    @State var nativeAd:GADNativeAd? = nil
     var body: some View {
         ZStack {
             AdSubView { [self] adinfo in
+                nativeAd = adinfo
                 if let uiimage = adinfo.icon?.image {
                     adImage = Image(uiImage: uiimage)
                 }
@@ -56,8 +64,11 @@ struct AdView : View {
                 }) ?? []
                 store = adinfo.store
                 isloading = false
+                isVideoAd = adinfo.mediaContent.hasVideoContent
+                mediaContent = adinfo.mediaContent
                 
-            }.frame(height: 1)
+            }
+            .fixedSize().opacity(0.5).frame(height: 80)
             ActivityIndicatorView(isVisible: $isloading, type: .default())
                 .frame(width: 40, height: 40)
 
@@ -106,27 +117,36 @@ struct AdView : View {
                                         .frame(width: 100)
                                 }
                             }
-                            if let txt = price {
-                                Text("price :")
-                                Text(txt)
-                            }
+//                            if let txt = price {
+//                                Text("price :")
+//                                Text(txt)
+//                            }
                             Spacer()
+                            if isVideoAd {
+                                Button {
+                                    mediaContent?.videoController.play()
+                                } label: {
+                                    Image(systemName: "play.rectangle")
+                                }
+                            }
                             if let txt = callToAction {
                                 Button {
-                                    if let advertiser = advertiser {
-                                        if let url = URL(string: advertiser) {
-                                            UIApplication.shared.open(url)
-                                        }
-                                    }
+                                    NotificationCenter.default.post(name: .googleAdNativeAdClick, object: nativeAd)
+//                                    if let advertiser = advertiser {
+//                                        if let url = URL(string: advertiser) {
+//                                            UIApplication.shared.open(url)
+//                                        }
+//                                    }
                                 } label: {
                                     Text(txt)
                                 }
                             }
                         }
                     }
-
                 }
-            }.padding(10)
+            }
+            .padding(10)
+            .shadow(color: .black, radius: 10, x: 5, y: 5)
             
            
 
@@ -134,7 +154,7 @@ struct AdView : View {
     }
 }
 
-class AdLoaderView : UIView {
+class AdLoaderView : GADMediaView {
     let loader:GADAdLoader
     let receiveAd:(_ adinfo:GADNativeAd)->()
     var pauseRequest = false
@@ -155,7 +175,12 @@ class AdLoaderView : UIView {
             self?.pauseRequest = false
             self?.loadAd()
         }
-        loadAd()
+        NotificationCenter.default.addObserver(forName: .googleAdNativeAdClick, object: nil, queue: nil) { [weak self] noti in
+            if let ad = noti.object as? GADNativeAd {
+                self?.nativeAdDidRecordClick(ad)
+            }
+        }
+        loadAd()        
     }
     
     func loadAd() {
@@ -181,8 +206,8 @@ extension AdLoaderView : GADNativeAdLoaderDelegate {
         nativeAd.registerClickConfirmingView(self)
         nativeAd.recordCustomClickGesture()
         print("nativeAdDelegate : setDelegate \(nativeAd.isCustomClickGestureEnabled)")
-        
-        self.receiveAd(nativeAd)
+        mediaContent = nativeAd.mediaContent
+        receiveAd(nativeAd)
     }
     
     func adLoader(_ adLoader: GADAdLoader, didFailToReceiveAdWithError error: Error) {
@@ -199,6 +224,12 @@ extension AdLoaderView : GADNativeAdDelegate {
     }
     func nativeAdDidRecordClick(_ nativeAd: GADNativeAd) {
         print("nativeAdDelegate : \(#function) \(#line)")
+        print("nativeAdDelegate \(nativeAd.advertiser ?? "없다")")
+        if let advertiser = nativeAd.advertiser {
+            if let url = URL(string: advertiser) {
+                UIApplication.shared.open(url)
+            }
+        }
     }
     func nativeAdDidDismissScreen(_ nativeAd: GADNativeAd) {
         print("nativeAdDelegate : \(#function) \(#line)")

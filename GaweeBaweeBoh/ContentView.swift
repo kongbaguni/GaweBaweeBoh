@@ -95,8 +95,9 @@ struct ContentView: View {
                         )
                     }
                 }
+                .background(Color.black)
             }
-            AdView()
+            AdView().zIndex(-1)
             Button {
                 GameManager.shared.units.removeAll()
             } label: {
@@ -104,6 +105,7 @@ struct ContentView: View {
                     .frame(height: 30)
                     .padding(.bottom,.safeAreaInsetBottom)
             }
+            .background(Color.black)
 
 
         }
