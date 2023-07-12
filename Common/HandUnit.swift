@@ -40,7 +40,8 @@ class HandUnit : Unit {
     var status:Status = .init(rawValue: .random(in: 0...2))!
     var ignoreTest = false
     
-    init(status:Status) {
+    init(status:Status, radius:CGFloat, origin:CGPoint) {
+        super.init(radius: radius, origin: origin)
         self.status = status;
     }
     

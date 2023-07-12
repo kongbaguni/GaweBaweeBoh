@@ -20,6 +20,12 @@ struct ContentView: View {
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { noti in
             AppGroup.saveGameData()
         }
+        NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: nil) { noti in
+            GameManager.shared.units.removeAll()
+//            for unit in GameManager.shared.units {
+//
+//            }
+        }
         GADMobileAds.sharedInstance().start()
     }
     
@@ -31,8 +37,8 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        GeometryReader { proxy in
-            VStack {
+        VStack {
+            GeometryReader { proxy in
                 Canvas{ context,size in
                     GameManager.shared.size = size
                     for i in 0...10 {
@@ -74,21 +80,32 @@ struct ContentView: View {
                     }
                     
                     if GameManager.shared.units.count < 100 {
-                        GameManager.shared.units.append(HandUnit(status: HandUnit.Status(rawValue: (count / 10) % 3)!))
+                        let w = proxy.size.width
+                        let h = proxy.size.height
+                        
+//                        let radius = w < h ? w / 30 : h / 20
+                        let radius = (w + h) * 0.015
+                        
+                        GameManager.shared.units.append(
+                            HandUnit(status: HandUnit.Status(rawValue: (count / 10) % 3)!,
+                                     radius: radius,
+                                     origin: .init(x:.random(in: radius*2..<w - radius*2) ,
+                                                   y:.random(in: radius*2..<h - radius*2))
+                                    )
+                        )
                     }
                 }
-                AdView()
-                Button {
-                    GameManager.shared.units.removeAll()
-                } label: {
-                    GraphView(data: data, total: total)
-                        .frame(height: 30)
-                        .padding(.bottom,.safeAreaInsetBottom)
-                }
-
-                
-                
             }
+            AdView()
+            Button {
+                GameManager.shared.units.removeAll()
+            } label: {
+                GraphView(data: data, total: total)
+                    .frame(height: 30)
+                    .padding(.bottom,.safeAreaInsetBottom)
+            }
+
+
         }
         .ignoresSafeArea(.all)
         .onAppear {

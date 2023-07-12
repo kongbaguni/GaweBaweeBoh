@@ -10,6 +10,7 @@ import SwiftUI
 
 class Unit {
     let uuid = UUID().uuidString
+    
     static func == (lhs: Unit, rhs: Unit) -> Bool {
         lhs.uuid == rhs.uuid
     }
@@ -19,21 +20,20 @@ class Unit {
         .init(x: rect.origin.x + rect.size.width * 0.5,
               y: rect.origin.y + rect.size.height * 0.5)
     }
-    
-    var rect:CGRect = .init(x: .random(in: 50...UIScreen.main.bounds.width - 50),
-                            y: .random(in: 50...UIScreen.main.bounds.height - 150),
-                            width: 30,
-                            height: 30)
-    
-    private var _radius:CGFloat? = nil
-    var radius:CGFloat {
-        if let value = _radius {
-            return value
-        }
-        let result = (rect.width + rect.height) * 0.25
-        _radius = result
-        return result
+    var rect:CGRect {
+        return .init(origin: origin, size: size)
     }
+
+    let radius:CGFloat
+    let size:CGSize
+    var origin:CGPoint = .zero
+    init(radius:CGFloat, origin:CGPoint) {
+        self.radius = radius
+        self.size = .init(width: radius*2, height: radius*2)
+        self.origin = origin
+    }
+    
+    
     
     var movement:CGSize = .init(width: .random(in: 0.1...0.5) * (Bool.random() ? -1.0 : 1.0) ,
                                 height: .random(in: 0.1...0.5) * (Bool.random() ? -1.0 : 1.0))
@@ -52,8 +52,8 @@ class Unit {
     }
     
     func process() {
-        rect.origin.x += movement.width
-        rect.origin.y += movement.height
+        origin.x += movement.width
+        origin.y += movement.height
     }
     
     func isCrash(targrt:Unit)->Bool {
