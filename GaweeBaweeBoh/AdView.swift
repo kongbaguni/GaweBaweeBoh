@@ -149,6 +149,7 @@ struct AdView : View {
 //                            }
                         }
                     }
+                    .frame(maxWidth: UIScreen.main.bounds.width - 90)
                 }
             }
             .padding(10)
@@ -196,7 +197,7 @@ class AdLoaderView : GADMediaView {
         NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: nil) { [weak self] noti in
             self?.layoutSubviews()
         }
-
+        
 //        NotificationCenter.default.addObserver(forName: .googleAdNativeAdClick, object: nil, queue: nil) { [weak self] noti in
 //            if let ad = noti.object as? GADNativeAd {
 ////                self?.nativeAdDidRecordClick(ad)
