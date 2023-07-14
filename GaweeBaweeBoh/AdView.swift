@@ -207,6 +207,7 @@ class AdLoaderView : GADMediaView {
         NotificationCenter.default.addObserver(forName: .googleAdPlayVideo, object: nil, queue: nil) { [weak self] noti in
             self?.mediaContent?.videoController.play()
         }
+        self.autoresizingMask = [.flexibleWidth]
         loadAd()        
     }
     
@@ -222,9 +223,7 @@ class AdLoaderView : GADMediaView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        if let size = superview?.frame.size {
-            frame.size = size
-        }
+        frame.size.width = UIScreen.main.bounds.width
     }
     
     required init?(coder: NSCoder) {
