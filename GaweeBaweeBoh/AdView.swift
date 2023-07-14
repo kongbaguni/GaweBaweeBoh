@@ -103,7 +103,7 @@ struct AdView : View {
                         }
                         if let txt = bodyStr {
                             HStack {
-                                Text(txt).font(.caption)
+                                Text(txt).font(.caption).lineLimit(4)
                                 Spacer()
                             }
                         }
