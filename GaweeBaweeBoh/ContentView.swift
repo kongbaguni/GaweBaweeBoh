@@ -100,8 +100,10 @@ struct ContentView: View {
                 }
                 .background(Color.backgroundColor1)
             }
-            BannerAdView(sizeType: .GADAdSizeBanner, padding: .zero).border(Color.black, width: 2).padding(5)
+            BannerAdView(sizeType: .GADAdSizeBanner, padding: .zero)
+                .border(Color.black, width: 2).padding(5)
             AdView().zIndex(-1)
+                .background(Color.backgroundColor2)
             Button {
                 GameManager.shared.units.removeAll()
             } label: {
@@ -110,7 +112,8 @@ struct ContentView: View {
                     .padding(.bottom,.safeAreaInsetBottom)
             }
             .background(Color.backgroundColor1)
-        }        
+        }
+        .background(Color.backgroundColor2)
         .ignoresSafeArea(.all)
         .onAppear {
             startUpdate()

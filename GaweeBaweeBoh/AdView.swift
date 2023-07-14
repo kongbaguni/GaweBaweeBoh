@@ -102,7 +102,8 @@ struct AdView : View {
                     .padding(.trailing,5)
                     .frame(width:80,height: 80)
                     
-                    VStack {
+                    ScrollView {
+                        Spacer().frame(height:15)
                         if let txt = headline {
                             HStack {
                                 Text(txt).font(.headline)
@@ -111,7 +112,7 @@ struct AdView : View {
                         }
                         if let txt = bodyStr {
                             HStack {
-                                Text(txt).font(.caption).lineLimit(4)
+                                Text(txt).font(.caption).lineLimit(10)
                                 Spacer()
                             }
                         }
@@ -157,7 +158,8 @@ struct AdView : View {
 //                            }
                         }
                     }
-                    .frame(maxWidth: UIScreen.main.bounds.width - 90)
+                    .padding(.top,40)
+                    .frame(maxWidth: UIScreen.main.bounds.width - 100)
                 }
             }
             .padding(10)
