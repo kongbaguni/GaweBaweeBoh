@@ -181,7 +181,7 @@ struct AdView : View {
                     .padding(.leading,5)
                     .shadow(color:.black, radius: 10, x:5,y:5)
                 Spacer()
-            }.frame(width:adWidth)
+            }.frame(width:adWidth + 10)
         }
         .frame(height: 100)
         .background(Color.backgroundColor2)
