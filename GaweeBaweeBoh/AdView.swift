@@ -58,29 +58,30 @@ struct AdView : View {
     @State var nativeAd:GADNativeAd? = nil
     var body: some View {
         ZStack {
-            AdSubView { [self] adinfo in
-                nativeAd = adinfo
-                if let uiimage = adinfo.icon?.image {
-                    adImage = Image(uiImage: uiimage)
-                }
-                advertiser = adinfo.advertiser
-                callToAction = adinfo.callToAction
-                headline = adinfo.headline
-                bodyStr = adinfo.body
-                starRating = adinfo.starRating
-                price = adinfo.price
-                images = adinfo.images?.map({ image in
-                    return image.image ?? UIImage()
-                }) ?? []
-                store = adinfo.store
-                isloading = false
-                isVideoAd = adinfo.mediaContent.hasVideoContent
-                mediaContent = adinfo.mediaContent
+            GeometryReader { proxy in
+                AdSubView { [self] adinfo in
+                    nativeAd = adinfo
+                    if let uiimage = adinfo.icon?.image {
+                        adImage = Image(uiImage: uiimage)
+                    }
+                    advertiser = adinfo.advertiser
+                    callToAction = adinfo.callToAction
+                    headline = adinfo.headline
+                    bodyStr = adinfo.body
+                    starRating = adinfo.starRating
+                    price = adinfo.price
+                    images = adinfo.images?.map({ image in
+                        return image.image ?? UIImage()
+                    }) ?? []
+                    store = adinfo.store
+                    isloading = false
+                    isVideoAd = adinfo.mediaContent.hasVideoContent
+                    mediaContent = adinfo.mediaContent
+                }.frame(width:proxy.size.width)
             }
             .fixedSize().opacity(0.5)
             ActivityIndicatorView(isVisible: $isloading, type: .default())
                 .frame(width: 40, height: 40)
-
             VStack {
                 HStack {
                     ScrollView {
@@ -232,7 +233,7 @@ class AdLoaderView : GADMediaView {
                 frame.size.width = long
             default:
                 frame.size.width = shot
-        }        
+        }
     }
     
     required init?(coder: NSCoder) {
