@@ -225,6 +225,7 @@ class AdLoaderView : GADMediaView {
     override func layoutSubviews() {
         super.layoutSubviews()
         frame.size.width = UIScreen.main.bounds.width
+        frame.origin.x = 0
     }
     
     required init?(coder: NSCoder) {
