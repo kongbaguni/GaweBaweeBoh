@@ -19,7 +19,6 @@ extension UIApplication {
     
     class var topViewController:UIViewController? {
         var vc = UIApplication.keyWindow?.rootViewController
-        vc?.presentedViewController
         while vc?.presentingViewController != nil {
             vc = vc?.presentingViewController
         }
