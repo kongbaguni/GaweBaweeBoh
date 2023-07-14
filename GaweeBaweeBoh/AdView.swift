@@ -58,28 +58,35 @@ struct AdView : View {
     @State var nativeAd:GADNativeAd? = nil
     var body: some View {
         ZStack {
-            GeometryReader { proxy in
-                AdSubView { [self] adinfo in
-                    nativeAd = adinfo
-                    if let uiimage = adinfo.icon?.image {
-                        adImage = Image(uiImage: uiimage)
-                    }
-                    advertiser = adinfo.advertiser
-                    callToAction = adinfo.callToAction
-                    headline = adinfo.headline
-                    bodyStr = adinfo.body
-                    starRating = adinfo.starRating
-                    price = adinfo.price
-                    images = adinfo.images?.map({ image in
-                        return image.image ?? UIImage()
-                    }) ?? []
-                    store = adinfo.store
-                    isloading = false
-                    isVideoAd = adinfo.mediaContent.hasVideoContent
-                    mediaContent = adinfo.mediaContent
-                }.frame(width:proxy.size.width)
+            AdSubView { [self] adinfo in
+                nativeAd = adinfo
+                if let uiimage = adinfo.icon?.image {
+                    adImage = Image(uiImage: uiimage)
+                }
+                advertiser = adinfo.advertiser
+                callToAction = adinfo.callToAction
+                headline = adinfo.headline
+                bodyStr = adinfo.body
+                starRating = adinfo.starRating
+                price = adinfo.price
+                images = adinfo.images?.map({ image in
+                    return image.image ?? UIImage()
+                }) ?? []
+                store = adinfo.store
+                isloading = false
+                isVideoAd = adinfo.mediaContent.hasVideoContent
+                mediaContent = adinfo.mediaContent
+            }.opacity(0)
+            if let image = nativeAd?.images?.first {
+                if let uiimage = image.image {
+                    Image(uiImage: uiimage)
+                        .resizable()
+                        .scaledToFill()
+                        .blur(radius: 5)
+                        .opacity(0.5)
+                }
             }
-            .fixedSize().opacity(0.5)
+            
             ActivityIndicatorView(isVisible: $isloading, type: .default())
                 .frame(width: 40, height: 40)
             VStack {
@@ -167,7 +174,10 @@ struct AdView : View {
                     .shadow(color:.black, radius: 10, x:5,y:5)
                 Spacer()
             }
-        }.frame(height: 100)
+        }
+        .frame(height: 100)
+        .background(Color.backgroundColor2)
+
     }
 }
 
