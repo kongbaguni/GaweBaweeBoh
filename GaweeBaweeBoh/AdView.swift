@@ -224,8 +224,15 @@ class AdLoaderView : GADMediaView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        frame.size.width = UIScreen.main.bounds.width
-        frame.origin.x = 0
+        let size = UIScreen.main.bounds.size
+        let shot = size.width < size.height ? size.width : size.height
+        let long = size.width > size.height ? size.width : size.height
+        switch UIDevice.current.orientation {
+            case .landscapeLeft, .landscapeRight:
+                frame.size.width = long
+            default:
+                frame.size.width = shot
+        }        
     }
     
     required init?(coder: NSCoder) {
