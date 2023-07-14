@@ -113,13 +113,13 @@ struct AdView : View {
                     ScrollView {                        
                         if let txt = headline {
                             HStack {
-                                Text(txt).font(.headline).lineLimit(0)
+                                Text(txt).font(.headline).lineLimit(3)
                                 Spacer()
                             }
                         }
                         if let txt = bodyStr {
                             HStack {
-                                Text(txt).font(.caption).lineLimit(0)
+                                Text(txt).font(.caption).lineLimit(100)
                                 Spacer()
                             }
                         }
