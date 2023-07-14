@@ -102,8 +102,7 @@ struct AdView : View {
                     .padding(.trailing,5)
                     .frame(width:80,height: 80)
                     
-                    ScrollView {
-                        Spacer().frame(height:15)
+                    ScrollView {                        
                         if let txt = headline {
                             HStack {
                                 Text(txt).font(.headline)
@@ -158,8 +157,7 @@ struct AdView : View {
 //                            }
                         }
                     }
-                    .padding(.top,40)
-                    .frame(maxWidth: UIScreen.main.bounds.width - 100)
+                    .frame(width: UIScreen.main.bounds.width - 100, height:80)
                 }
             }
             .padding(10)
