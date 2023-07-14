@@ -56,6 +56,14 @@ struct AdView : View {
     @State var isVideoAd = false
     @State var mediaContent:GADMediaContent? = nil
     @State var nativeAd:GADNativeAd? = nil
+    var adWidth:CGFloat {
+        switch UIDevice.current.orientation {
+            case .landscapeRight, .landscapeLeft :
+                return UIScreen.main.bounds.size.height - 20
+            default:
+                return UIScreen.main.bounds.size.width - 20
+        }
+    }
     var body: some View {
         ZStack {
             AdSubView { [self] adinfo in
@@ -105,13 +113,13 @@ struct AdView : View {
                     ScrollView {                        
                         if let txt = headline {
                             HStack {
-                                Text(txt).font(.headline)
+                                Text(txt).font(.headline).lineLimit(0)
                                 Spacer()
                             }
                         }
                         if let txt = bodyStr {
                             HStack {
-                                Text(txt).font(.caption).lineLimit(10)
+                                Text(txt).font(.caption).lineLimit(0)
                                 Spacer()
                             }
                         }
@@ -157,7 +165,7 @@ struct AdView : View {
 //                            }
                         }
                     }
-                    .frame(width: UIScreen.main.bounds.width - 100, height:80)
+                    .frame(width: adWidth - 100, height:80)
                 }
             }
             .padding(10)
@@ -173,7 +181,7 @@ struct AdView : View {
                     .padding(.leading,5)
                     .shadow(color:.black, radius: 10, x:5,y:5)
                 Spacer()
-            }
+            }.frame(width:adWidth)
         }
         .frame(height: 100)
         .background(Color.backgroundColor2)
