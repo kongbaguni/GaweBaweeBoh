@@ -192,6 +192,10 @@ class AdLoaderView : GADMediaView {
             self?.pauseRequest = false
             self?.loadAd()
         }
+        
+        NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: nil) { [weak self] noti in
+            self?.layoutSubviews()
+        }
 
 //        NotificationCenter.default.addObserver(forName: .googleAdNativeAdClick, object: nil, queue: nil) { [weak self] noti in
 //            if let ad = noti.object as? GADNativeAd {
@@ -218,6 +222,9 @@ class AdLoaderView : GADMediaView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        if let size = superview?.frame.size {
+            frame.size = size
+        }
     }
     
     required init?(coder: NSCoder) {
