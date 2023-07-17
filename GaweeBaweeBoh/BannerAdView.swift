@@ -58,10 +58,10 @@ struct BannerAdView: View {
     let gad = GoogleAd()
     var body: some View {
         ZStack {
+            ActivityIndicatorView(isVisible: $loading, type: .default()).frame(width: 40, height: 40)
             if let view = bannerView {
                 GoogleAdBannerView(bannerView: view)
             }
-            ActivityIndicatorView(isVisible: $loading, type: .default()).frame(width: 40, height: 40)
         }
         .frame(width: bannerSize.width, height: bannerSize.height, alignment: .center)
         .padding(.top,padding.top)
