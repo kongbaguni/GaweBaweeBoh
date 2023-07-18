@@ -14,8 +14,7 @@ class GameManager {
     var size:CGSize = .zero
     
     func process() {
-        for (idx,unit) in units.enumerated() {
-//            unit.limit = Int(size.height * 2);
+        for unit in units {
             unit.process()
             
             let test = size.isOver(rect: unit.rect)
@@ -27,12 +26,7 @@ class GameManager {
             }
                         
             for unit2 in units {
-                if(unit.isCrash(targrt: unit2)) {
-//                    unit.movement.width *= -1
-//                    unit.movement.height *= -1
-//                    unit2.movement.width *= -1
-//                    unit2.movement.height *= -1
-                }
+                _ = unit.isCrash(targrt: unit2)                
             }
                         
         }
