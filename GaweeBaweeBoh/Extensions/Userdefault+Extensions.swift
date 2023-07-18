@@ -19,18 +19,5 @@ extension UserDefaults {
                 return nil
             }
         }
-    }
-    
-    var unitLimit:Int {
-        set {
-            set(newValue, forKey: "unitLimit")
-        }
-        get {
-            let value = integer(forKey: "unitLimit")
-            if value == 0 {
-                return 100
-            }
-            return value
-        }
-    }
+    }       
 }

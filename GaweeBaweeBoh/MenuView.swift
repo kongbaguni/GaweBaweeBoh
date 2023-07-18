@@ -8,20 +8,36 @@
 import SwiftUI
 
 struct MenuView: View {
-    @State var unitLimit = ""
+    @AppStorage("unitLimit") var unitLimit:Double = 100
+    @AppStorage("unitSpeed") var unitSpeed:Double = 0
+    @AppStorage("unitSize") var unitSize:Double = 0.015
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack {
             List {
                 HStack {
-                    Text("Unit Limit")
-                    TextField(text: $unitLimit) {
-                        Text("100")
-                    }.keyboardType(.numberPad)
+                    VStack(alignment: .leading) {
+                        Text("Unit Limit")
+                        Text("\(Int(unitLimit))").foregroundColor(.indigo)
+                    }
+                    Slider(value: $unitLimit, in: 50...500)
+                }
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Unit Speed")
+                        Text("\(unitSpeed)").foregroundColor(.indigo)
+                    }
+                    Slider(value: $unitSpeed, in: 0.01...5.0)
+                }
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("Unit Size")
+                        Text("\n\(unitSize)").foregroundColor(.indigo)
+                    }
+                    Slider(value: $unitSize, in: 0.01...0.05)
                 }
             }
             Button {
-                UserDefaults.standard.unitLimit = NSString(string:unitLimit).integerValue
                 presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("confirm")
@@ -30,9 +46,6 @@ struct MenuView: View {
 
         }
         .navigationTitle(Text("setting"))
-        .onAppear {
-            unitLimit = "\(UserDefaults.standard.unitLimit)"
-        }
     }
 }
 

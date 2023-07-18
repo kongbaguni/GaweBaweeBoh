@@ -10,6 +10,10 @@ import WidgetKit
 import GoogleMobileAds
 
 struct ContentView: View {
+    @AppStorage("unitLimit") var unitLimit:Double = 100
+    @AppStorage("unitSpeed") var unitSpeed:Double = 1
+    @AppStorage("unitSize") var unitSize:Double = 0.015
+    
     @State var csize:CGFloat = 100
     @State var width:CGFloat = 4.0
     @State var count = 0
@@ -79,12 +83,11 @@ struct ContentView: View {
                     
                 }
                 
-                if GameManager.shared.units.count < UserDefaults.standard.unitLimit {
+                if GameManager.shared.units.count < Int(unitLimit) {
                     let w = proxy.size.width
                     let h = proxy.size.height
                     
-                    //                        let radius = w < h ? w / 30 : h / 20
-                    let radius = (w + h) * 0.015
+                    let radius = (w + h) * unitSize
                     
                     GameManager.shared.units.append(
                         HandUnit(status: HandUnit.Status(rawValue: (count / 10) % 3)!,

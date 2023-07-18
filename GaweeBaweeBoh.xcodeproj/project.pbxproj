@@ -47,6 +47,7 @@
 		1B55EDED2A6660CF00FCB7F8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55EDEC2A6660CF00FCB7F8 /* MenuView.swift */; };
 		1B55EDF12A66670800FCB7F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B55EDF42A66670800FCB7F8 /* Localizable.strings */; };
 		1B55EDF22A66670800FCB7F8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B55EDF42A66670800FCB7F8 /* Localizable.strings */; };
+		1B55EDF72A666A5500FCB7F8 /* Userdefault+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE50AA2A5E98D70058400D /* Userdefault+Extensions.swift */; };
 		1B5A782E2A5678F6005C3ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
 		1BBE50A12A5E67A80058400D /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE50A02A5E67A80058400D /* StarView.swift */; };
 		1BBE50A92A5E97BC0058400D /* GoogleAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE50A82A5E97BC0058400D /* GoogleAd.swift */; };
@@ -392,6 +393,7 @@
 				1B0551562A56A717002904B5 /* AppGroup.swift in Sources */,
 				1B0551572A56A717002904B5 /* Unit.swift in Sources */,
 				1B0551542A56A710002904B5 /* CGSIze+Extensions.swift in Sources */,
+				1B55EDF72A666A5500FCB7F8 /* Userdefault+Extensions.swift in Sources */,
 				1B0551432A56A6FB002904B5 /* widgetLiveActivity.swift in Sources */,
 				1B0551412A56A6FB002904B5 /* widgetBundle.swift in Sources */,
 				1B0551532A56A710002904B5 /* Color+Extensions.swift in Sources */,

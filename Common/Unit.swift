@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 class Unit {
+    @AppStorage("unitSpeed") var unitSpeed:Double = 1.0    
     let uuid = UUID().uuidString
     
     static func == (lhs: Unit, rhs: Unit) -> Bool {
@@ -52,8 +53,8 @@ class Unit {
     }
     
     func process() {
-        origin.x += movement.width
-        origin.y += movement.height
+        origin.x += movement.width * unitSpeed
+        origin.y += movement.height * unitSpeed
     }
     
     func isCrash(targrt:Unit)->Bool {
