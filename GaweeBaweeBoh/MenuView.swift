@@ -32,7 +32,7 @@ struct MenuView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Unit Size")
-                        Text("\n\(unitSize)").foregroundColor(.indigo)
+                        Text("\n\(unitSize*100)").foregroundColor(.indigo)
                     }
                     Slider(value: $unitSize, in: 0.01...0.05)
                 }

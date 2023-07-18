@@ -129,21 +129,31 @@ struct ContentView: View {
                 alignment: .center,
                 spacing: 0
             ) {
-                canvasView
+                ZStack {
+                    canvasView
+                    VStack {
+                        HStack {
+                            Spacer()
+                            NavigationLink(destination: MenuView()) {
+                                Image(systemName: "line.3.horizontal")
+                                    .imageScale(.large)
+                                    .padding(10)
+                                    .background(Color.white).opacity(0.8)
+                                    .cornerRadius(10)
+                                    .padding(10)
+                            }
+                        }
+                        Spacer()
+                    }
+                }
                 graphView
                 adView
             }
             .background(Color.backgroundColor2)
             .onAppear {
                 startUpdate()
-            }            
-            .toolbar {
-                ToolbarItem {
-                    NavigationLink(destination: MenuView()) {
-                        Image(systemName: "line.3.horizontal").shadow(color:.white ,radius: 10)
-                    }
-                }
             }
+            .navigationBarTitleDisplayMode(.inline)
             
         }
     }
