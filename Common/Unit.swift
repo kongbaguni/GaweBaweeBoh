@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class Unit {
-    @AppStorage("unitSpeed") var unitSpeed:Double = 1.0    
+    @AppStorage("unitSpeed") var unitSpeed:Double = Consts.unitSpeed
     let uuid = UUID().uuidString
     
     static func == (lhs: Unit, rhs: Unit) -> Bool {

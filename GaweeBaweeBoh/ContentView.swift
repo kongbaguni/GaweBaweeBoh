@@ -10,9 +10,9 @@ import WidgetKit
 import GoogleMobileAds
 
 struct ContentView: View {
-    @AppStorage("unitLimit") var unitLimit:Double = 100
-    @AppStorage("unitSpeed") var unitSpeed:Double = 1
-    @AppStorage("unitSize") var unitSize:Double = 0.015
+    @AppStorage("unitLimit") var unitLimit:Double = Consts.unitLimit
+    @AppStorage("unitSpeed") var unitSpeed:Double = Consts.unitSpeed
+    @AppStorage("unitSize") var unitSize:Double = Consts.unitSize
     
     @State var csize:CGFloat = 100
     @State var width:CGFloat = 4.0

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MenuView: View {
-    @AppStorage("unitLimit") var unitLimit:Double = 100
-    @AppStorage("unitSpeed") var unitSpeed:Double = 0
-    @AppStorage("unitSize") var unitSize:Double = 0.015
+    @AppStorage("unitLimit") var unitLimit:Double = Consts.unitLimit
+    @AppStorage("unitSpeed") var unitSpeed:Double = Consts.unitSpeed
+    @AppStorage("unitSize") var unitSize:Double = Consts.unitSize
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
         VStack {
