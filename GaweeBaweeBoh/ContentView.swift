@@ -124,44 +124,56 @@ struct ContentView: View {
         .background(Color.backgroundColor1)
     }
     
+    var navigationItem : some View {
+        NavigationLink(destination: MenuView()) {
+            Image(systemName: "line.3.horizontal")
+                .imageScale(.large)
+                .padding(10)
+                .background(Color.white).opacity(0.8)
+                .cornerRadius(10)
+                .padding(10)
+        }
+    }
+    
+    var main: some View {
+        VStack (
+            alignment: .center,
+            spacing: 0
+        ) {
+            canvasView
+            graphView
+            adView
+        }
+        .background(Color.backgroundColor2)
+        .onAppear {
+            startUpdate()
+            // AppTrakintTransparancy 프롬프트는 onAppear 1초 뒤에 UI스레드에서 실행해야 나타난다...
+            GoogleAdPrompt.promptWithDelay {
+                
+            }
+        }
+    }
+    
     var body: some View {
         NavigationView {
-            VStack (
-                alignment: .center,
-                spacing: 0
-            ) {
-                ZStack {
-                    canvasView
-                    VStack {
-                        HStack {
-                            Spacer()
-                            NavigationLink(destination: MenuView()) {
-                                Image(systemName: "line.3.horizontal")
-                                    .imageScale(.large)
-                                    .padding(10)
-                                    .background(Color.white).opacity(0.8)
-                                    .cornerRadius(10)
-                                    .padding(10)
-                            }
-                        }
-                        Spacer()
-                    }
+            if #available(iOS 16.2, *) {
+                NavigationStack {
+                    main
+                }.toolbar {
+                    navigationItem
                 }
-                graphView
-                adView
-            }
-            .background(Color.backgroundColor2)
-            .onAppear {
-                startUpdate()
-                // AppTrakintTransparancy 프롬프트는 onAppear 1초 뒤에 UI스레드에서 실행해야 나타난다...
-                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                    AppTrackingTransparancyHelper.requestTrackingAuthorization {
-                        
+                
+            } else {
+                main
+                    .toolbar {
+                        navigationItem
                     }
-                }
+                
             }
-            .navigationBarTitleDisplayMode(.inline)
-        }.navigationViewStyle(.stack)
+            
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationViewStyle(.stack)
     }
     
     func startUpdate() {

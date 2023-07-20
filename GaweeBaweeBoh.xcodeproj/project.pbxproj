@@ -51,7 +51,7 @@
 		1B55EDF92A667C3200FCB7F8 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55EDF82A667C3200FCB7F8 /* Consts.swift */; };
 		1B55EDFA2A667C3400FCB7F8 /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B55EDF82A667C3200FCB7F8 /* Consts.swift */; };
 		1B5A782E2A5678F6005C3ECC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B5A78312A5678F6005C3ECC /* InfoPlist.strings */; };
-		1B692B012A68B4FE0007F5FB /* UserMessagingPlatformHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B692B002A68B4FE0007F5FB /* UserMessagingPlatformHelper.swift */; };
+		1B692B012A68B4FE0007F5FB /* GoogleAdPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B692B002A68B4FE0007F5FB /* GoogleAdPrompt.swift */; };
 		1BBE50A12A5E67A80058400D /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE50A02A5E67A80058400D /* StarView.swift */; };
 		1BBE50A92A5E97BC0058400D /* GoogleAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE50A82A5E97BC0058400D /* GoogleAd.swift */; };
 		1BBE50AB2A5E98D70058400D /* Userdefault+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBE50AA2A5E98D70058400D /* Userdefault+Extensions.swift */; };
@@ -121,7 +121,7 @@
 		1B55EDF62A66672600FCB7F8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B55EDF82A667C3200FCB7F8 /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		1B5A78302A5678F6005C3ECC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1B692B002A68B4FE0007F5FB /* UserMessagingPlatformHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessagingPlatformHelper.swift; sourceTree = "<group>"; };
+		1B692B002A68B4FE0007F5FB /* GoogleAdPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdPrompt.swift; sourceTree = "<group>"; };
 		1BBE50A02A5E67A80058400D /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		1BBE50A82A5E97BC0058400D /* GoogleAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleAd.swift; sourceTree = "<group>"; };
 		1BBE50AA2A5E98D70058400D /* Userdefault+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Userdefault+Extensions.swift"; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				1B383F7C2A556131003665EA /* Info.plist */,
-				1B692B002A68B4FE0007F5FB /* UserMessagingPlatformHelper.swift */,
+				1B692B002A68B4FE0007F5FB /* GoogleAdPrompt.swift */,
 				1B383F742A550867003665EA /* GaweeBaweeBoh.entitlements */,
 				1B383F732A5501DC003665EA /* Extensions */,
 				1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */,
@@ -421,7 +421,7 @@
 				1B2886512A18FAF400B1244B /* Unit.swift in Sources */,
 				1B55EDED2A6660CF00FCB7F8 /* MenuView.swift in Sources */,
 				1B248B632A5CE43100A312DD /* AdView.swift in Sources */,
-				1B692B012A68B4FE0007F5FB /* UserMessagingPlatformHelper.swift in Sources */,
+				1B692B012A68B4FE0007F5FB /* GoogleAdPrompt.swift in Sources */,
 				1BBE50AB2A5E98D70058400D /* Userdefault+Extensions.swift in Sources */,
 				1B383F4D2A54F9C9003665EA /* CGFloat+Extensions.swift in Sources */,
 				1B2886552A19D60C00B1244B /* GameManager.swift in Sources */,
