@@ -84,7 +84,7 @@ struct AdView : View {
                 isloading = false
                 isVideoAd = adinfo.mediaContent.hasVideoContent
                 mediaContent = adinfo.mediaContent
-            }.opacity(0)
+            }.opacity(0)                
             if let image = nativeAd?.images?.first {
                 if let uiimage = image.image {
                     Image(uiImage: uiimage)

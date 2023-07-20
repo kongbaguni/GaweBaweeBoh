@@ -24,7 +24,7 @@ fileprivate let bannerGaId = "ca-app-pub-7714069006629518/8561673537" // real ga
 class GoogleAd : NSObject {
     
     var interstitial:GADRewardedAd? = nil
-    func requestTrackingAuthorization(complete:@escaping()->Void) {
+    private func requestTrackingAuthorization(complete:@escaping()->Void) {
         ATTrackingManager.requestTrackingAuthorization { status in
             print("google ad tracking status : \(status)")
             complete()
