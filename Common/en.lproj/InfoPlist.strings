@@ -7,3 +7,4 @@
 */
 "CFBundleName" = "가위바위보";
 "CFBundleDisplayName" = "가위바위보";
+"NSUserTrackingUsageDescription" = "This identifier will be used to deliver personalized ads to you.";
