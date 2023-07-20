@@ -153,10 +153,10 @@ struct ContentView: View {
             .background(Color.backgroundColor2)
             .onAppear {
                 startUpdate()
+                // AppTrakintTransparancy 프롬프트는 onAppear 1초 뒤에 UI스레드에서 실행해야 나타난다...
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-                    ATTrackingManager.requestTrackingAuthorization { status in
-                        print("google ad tracking status : \(status)")
-                        UserMessagingPlatformHelper.ump()
+                    AppTrackingTransparancyHelper.requestTrackingAuthorization {
+                        
                     }
                 }
             }

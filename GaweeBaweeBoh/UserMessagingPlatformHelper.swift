@@ -8,9 +8,19 @@
 import Foundation
 import UIKit
 import UserMessagingPlatform
+import AppTrackingTransparency
+
+struct AppTrackingTransparancyHelper {
+    static func requestTrackingAuthorization(complete:@escaping()->Void) {
+        ATTrackingManager.requestTrackingAuthorization { status in
+            print("google ad tracking status : \(status)")
+            UserMessagingPlatformHelper.prompt(complete: complete)
+        }
+    }
+}
 
 struct UserMessagingPlatformHelper {
-    static func ump() {
+    static func prompt(complete:@escaping()->Void) {
         func loadForm() {
           // Loads a consent form. Must be called on the main thread.
             UMPConsentForm.load { form, loadError in
@@ -21,7 +31,7 @@ struct UserMessagingPlatformHelper {
                     // later.
                     if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.required {
                         form?.present(
-                            from: UIApplication.topViewController!,
+                            from: UIApplication.shared.lastViewController!,
                             completionHandler: { dismissError in
                                 if UMPConsentInformation.sharedInstance.consentStatus == UMPConsentStatus.obtained {
                                     // App can start requesting ads.
@@ -57,9 +67,9 @@ struct UserMessagingPlatformHelper {
                     let formStatus = UMPConsentInformation.sharedInstance.formStatus
                     if formStatus == UMPFormStatus.available {
                       loadForm()
-                    }
-
+                    }                    
                 }
+                complete()
             })
     }
 

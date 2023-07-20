@@ -9,18 +9,39 @@ import Foundation
 import UIKit
 
 extension UIApplication {
-    class var keyWindowScene:UIWindowScene? {
-        return UIApplication.shared.connectedScenes.first as? UIWindowScene
+    var keyWindow: UIWindow? {
+        // Get connected scenes
+        return UIApplication.shared.connectedScenes
+            // Keep only active scenes, onscreen and visible to the user
+            .filter { $0.activationState == .foregroundActive }
+            // Keep only the first `UIWindowScene`
+            .first(where: { $0 is UIWindowScene })
+            // Get its associated windows
+            .flatMap({ $0 as? UIWindowScene })?.windows
+            // Finally, keep only the key window
+            .first(where: \.isKeyWindow)
     }
     
-    class var keyWindow:UIWindow? {
-        keyWindowScene?.windows.first(where: {$0.isKeyWindow})
-    }    
     
-    class var topViewController:UIViewController? {
-        var vc = UIApplication.keyWindow?.rootViewController
-        while vc?.presentingViewController != nil {
-            vc = vc?.presentingViewController
+    var statusFrame:CGRect {
+        return keyWindow?.windowScene?.statusBarManager?.statusBarFrame ?? .zero
+    }
+    
+    var safeAreaInsets:UIEdgeInsets {
+        return keyWindow?.safeAreaInsets ?? .zero
+    }
+    
+    var rootViewController:UIViewController? {
+        let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        return scene?.windows.last?.rootViewController
+    }
+    
+    var lastViewController:UIViewController? {
+        var vc = rootViewController
+        if let ovc = vc {
+            while ovc.presentedViewController != nil {
+                vc = ovc.presentedViewController
+            }
         }
         return vc
     }
