@@ -136,13 +136,25 @@ struct ContentView: View {
     }
     
     var main: some View {
-        VStack (
-            alignment: .center,
-            spacing: 0
-        ) {
-            canvasView
-            graphView
-            adView
+        Group {
+            switch UIDevice.current.orientation {
+                case .portrait, .portraitUpsideDown:
+                    VStack(
+                        alignment: .center,
+                        spacing: 0
+                    ) {
+                        canvasView
+                        graphView
+                        adView
+                    }
+                default:
+                    HStack {
+                        VStack {
+                            canvasView
+                            graphView
+                        }
+                    }
+            }
         }
         .background(Color.backgroundColor2)
         .onAppear {
