@@ -108,7 +108,7 @@ struct ContentView: View {
         Group {
             BannerAdView(sizeType: .GADAdSizeBanner, padding: .zero)
                 .border(Color.black, width: 2).padding(5)
-            AdView().zIndex(-1)
+            NativeAdView().zIndex(-1)
                 .background(Color.backgroundColor2)
         }
     }
