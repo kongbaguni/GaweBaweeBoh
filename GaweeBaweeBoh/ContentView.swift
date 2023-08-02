@@ -139,7 +139,9 @@ struct ContentView: View {
             switch UIDevice.current.orientation {
                 case .landscapeLeft, .landscapeRight:
                     HStack(spacing:0) {
-                        BannerAdView(sizeType: .GADAdSizeSkyscraper, padding: .zero)
+                        ScrollView {
+                            BannerAdView(sizeType: .GADAdSizeSkyscraper, padding: .zero)
+                        }
                         VStack {
                             canvasView
                             graphView
