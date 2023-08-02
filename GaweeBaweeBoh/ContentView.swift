@@ -104,13 +104,13 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.all)
     }
     
-    var adView : some View {
-        Group {
-            BannerAdView(sizeType: .GADAdSizeBanner, padding: .zero)
-                .border(Color.black, width: 2).padding(5)
-            NativeAdView().zIndex(-1)
-                .background(Color.backgroundColor2)
-        }
+    var adView1 : some View {
+        BannerAdView(sizeType: .GADAdSizeBanner, padding: .zero)
+            .border(Color.black, width: 2).padding(5)
+    }
+    var adView2 : some View {
+        NativeAdView()
+            .background(Color.backgroundColor2)
     }
     
     var graphView : some View {
@@ -119,7 +119,6 @@ struct ContentView: View {
         } label: {
             GraphView(data: data, total: total)
                 .frame(height: 30)
-//                .padding(.bottom,.safeAreaInsetBottom)
         }
         .background(Color.backgroundColor1)
     }
@@ -138,6 +137,15 @@ struct ContentView: View {
     var main: some View {
         Group {
             switch UIDevice.current.orientation {
+                case .landscapeLeft, .landscapeRight:
+                    HStack(spacing:0) {
+                        BannerAdView(sizeType: .GADAdSizeSkyscraper, padding: .zero)
+                        VStack {
+                            canvasView
+                            graphView
+                        }
+                    }
+
                 case .portrait, .portraitUpsideDown:
                     VStack(
                         alignment: .center,
@@ -145,15 +153,17 @@ struct ContentView: View {
                     ) {
                         canvasView
                         graphView
-                        adView
+                        adView2
                     }
                 default:
-                    HStack {
-                        VStack {
-                            canvasView
-                            graphView
-                        }
+                    VStack(
+                        alignment: .center,
+                        spacing: 0
+                    ) {
+                        canvasView
+                        graphView
                     }
+
             }
         }
         .background(Color.backgroundColor2)
