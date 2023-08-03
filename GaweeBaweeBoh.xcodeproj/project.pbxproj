@@ -198,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				1B383F7C2A556131003665EA /* Info.plist */,
-				1B692B002A68B4FE0007F5FB /* GoogleAdPrompt.swift */,
 				1B383F742A550867003665EA /* GaweeBaweeBoh.entitlements */,
 				1B383F732A5501DC003665EA /* Extensions */,
 				1B2886262A18F77400B1244B /* GaweeBaweeBohApp.swift */,
@@ -286,6 +285,7 @@
 		8D3AB3DC2A79EFD400293468 /* GoogleAd */ = {
 			isa = PBXGroup;
 			children = (
+				1B692B002A68B4FE0007F5FB /* GoogleAdPrompt.swift */,
 				1BBE50AC2A5E9A370058400D /* BannerAdView.swift */,
 				1BBE50A82A5E97BC0058400D /* GoogleAd.swift */,
 				1B248B622A5CE43100A312DD /* NativeAdView.swift */,
