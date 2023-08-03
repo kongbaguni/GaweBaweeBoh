@@ -27,8 +27,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="fNp-yu-K4i" customClass="GADMediaView">
-                    <rect key="frame" x="15" y="108.5" width="345" height="508.5"/>
-                    <color key="backgroundColor" systemColor="systemMintColor"/>
+                    <rect key="frame" x="15" y="113.5" width="345" height="498.5"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iNa-bH-h1m">
                     <rect key="frame" x="15" y="15" width="50" height="50"/>
@@ -97,13 +97,13 @@
                 <constraint firstItem="hwF-UL-Q8H" firstAttribute="centerY" secondItem="E5w-YA-UY8" secondAttribute="centerY" id="EZN-Wo-UiO"/>
                 <constraint firstItem="iNa-bH-h1m" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="G6B-zx-Uoq"/>
                 <constraint firstAttribute="trailing" secondItem="PEQ-D9-2Vv" secondAttribute="trailing" constant="15" id="KDj-nF-0DS"/>
-                <constraint firstItem="fNp-yu-K4i" firstAttribute="top" secondItem="PEQ-D9-2Vv" secondAttribute="bottom" constant="5" id="KIf-qI-b6X"/>
+                <constraint firstItem="fNp-yu-K4i" firstAttribute="top" secondItem="PEQ-D9-2Vv" secondAttribute="bottom" constant="10" id="KIf-qI-b6X"/>
                 <constraint firstItem="fNp-yu-K4i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Kly-rh-zVc"/>
                 <constraint firstItem="2Of-AP-0h9" firstAttribute="bottom" secondItem="GTT-Yh-eSq" secondAttribute="bottom" id="RKx-kP-FIA"/>
                 <constraint firstItem="Ysb-of-cat" firstAttribute="centerY" secondItem="hwF-UL-Q8H" secondAttribute="centerY" id="S7y-wk-rmP"/>
                 <constraint firstItem="beR-eV-DX1" firstAttribute="leading" secondItem="iNa-bH-h1m" secondAttribute="trailing" constant="5" id="Tee-hm-zf9"/>
                 <constraint firstAttribute="trailing" secondItem="beR-eV-DX1" secondAttribute="trailing" constant="15" id="UPc-AS-4jc"/>
-                <constraint firstItem="E5w-YA-UY8" firstAttribute="top" secondItem="fNp-yu-K4i" secondAttribute="bottom" constant="5" id="bSE-WE-gvl"/>
+                <constraint firstItem="E5w-YA-UY8" firstAttribute="top" secondItem="fNp-yu-K4i" secondAttribute="bottom" constant="10" id="bSE-WE-gvl"/>
                 <constraint firstItem="PEQ-D9-2Vv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="d87-JE-5re"/>
                 <constraint firstItem="E5w-YA-UY8" firstAttribute="leading" secondItem="hwF-UL-Q8H" secondAttribute="trailing" constant="15" id="dui-4a-4di"/>
                 <constraint firstItem="iNa-bH-h1m" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="k62-kw-C9P"/>
@@ -122,9 +122,6 @@
         </systemColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemMintColor">
-            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
