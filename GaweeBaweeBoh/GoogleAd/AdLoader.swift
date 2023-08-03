@@ -10,7 +10,7 @@ import GoogleMobileAds
 #if DEBUG
 fileprivate let adId = "ca-app-pub-3940256099942544/3986624511"
 #else
-fileprivate let adId = "ca-app-pub-7714069006629518/8836977450"
+fileprivate let adId = "ca-app-pub-7714069006629518/1560510288"
 #endif
 class AdLoader : NSObject {
     static let shared = AdLoader()
